@@ -30,7 +30,7 @@ namespace SquareCheck_desktop.Private
 
         private void mahasiswa_selected(object sender, RoutedEventArgs e)
         {
-
+            subPage.Navigate(new ListMahasiswa.ListMahasiswa());
         }
 
         private void home_selected(object sender, RoutedEventArgs e)
