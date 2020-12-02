@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using SquareCheck_desktop.ListSubject;
+using System.Windows;
 using Velacro.UIElements.Basic;
 
 namespace SquareCheck_desktop.Private
@@ -24,7 +25,7 @@ namespace SquareCheck_desktop.Private
 
         private void matakuliah_selected(object sender, RoutedEventArgs e)
         {
-
+            subPage.Navigate(new ListSubjectPage());
         }
 
         private void mahasiswa_selected(object sender, RoutedEventArgs e)
