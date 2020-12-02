@@ -1,6 +1,6 @@
 ﻿using Velacro.UIElements.Basic;
 using SquareCheck_desktop.Private;
-using System;
+using SquareCheck_desktop.Login;
 
 namespace SquareCheck_desktop
 {
@@ -14,17 +14,18 @@ namespace SquareCheck_desktop
         public MainWindow()
         {
             InitializeComponent();
-            privatePage = new PrivatePage(GoToLoginPage);
-            GoToPrivatePage();
+            GoToLoginPage();
         }
 
         public void GoToPrivatePage()
         {
+            privatePage = new PrivatePage();
             mainFrame.Navigate(privatePage);
         }
 
         public void GoToLoginPage()
         {
+            loginPage = new LoginPage();
             mainFrame.Navigate(loginPage);
         }
     }

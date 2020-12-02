@@ -89,13 +89,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Login\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Api\ApiGenerator.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Login\LoginController.cs" />
+    <Compile Include="Login\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -107,6 +116,19 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\APIResponse.cs" />
+    <Compile Include="Model\AttendanceModel.cs" />
+    <Compile Include="Model\ClassroomModel.cs" />
+    <Compile Include="Model\DepartmentModel.cs" />
+    <Compile Include="Model\DepartmentSummaryModel.cs" />
+    <Compile Include="Model\LecturerModel.cs" />
+    <Compile Include="Model\Link.cs" />
+    <Compile Include="Model\Meta.cs" />
+    <Compile Include="Model\ScheduleModel.cs" />
+    <Compile Include="Model\StudentModel.cs" />
+    <Compile Include="Model\SubjectModel.cs" />
+    <Compile Include="Model\TokenModel.cs" />
+    <Compile Include="Model\UserModel.cs" />
     <Compile Include="Private\PrivatePage.xaml.cs">
       <DependentUpon>PrivatePage.xaml</DependentUpon>
     </Compile>

@@ -44,8 +44,10 @@ namespace SquareCheck_desktop.Api
 
             client.setOnSuccessRequest(successAction);
             var response = await client.sendRequest(request);
-            // TODO: Subject to change
-            Token = response.getParsedObject<TokenModel>().Token;
+            if (response != null && response.getHttpResponseMessage().Content != null)
+            {
+                Token = response.getParsedObject<TokenModel>().Token;
+            }
         }
 
         public static async Task GetListStudent(Action<HttpResponseBundle> successAction)

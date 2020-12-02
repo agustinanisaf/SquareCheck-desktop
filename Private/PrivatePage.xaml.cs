@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using Velacro.UIElements.Basic;
 
 namespace SquareCheck_desktop.Private
@@ -9,18 +8,18 @@ namespace SquareCheck_desktop.Private
     /// </summary>
     public partial class PrivatePage : MyPage
     {
-        public Action GoToLoginPage { get; }
-
-        public PrivatePage(Action goToLoginPage)
+        public PrivatePage()
         {
             InitializeComponent();
             this.KeepAlive = true;
-            GoToLoginPage = goToLoginPage;
         }
 
         private void logout_selected(object sender, RoutedEventArgs e)
         {
-            GoToLoginPage();
+            this.Dispatcher.Invoke(() => {
+                this.NavigationService.GoBack();
+                this.NavigationService.RemoveBackEntry();
+            });
         }
 
         private void matakuliah_selected(object sender, RoutedEventArgs e)
