@@ -1,0 +1,52 @@
+﻿<basic1:MyPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:SquareCheck_desktop.ListStudentSubjects"
+    xmlns:basic1="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+    x:Class="SquareCheck_desktop.ListStudentSubjects.ListStudentSubjectsPage"
+    mc:Ignorable="d" 
+    d:DesignHeight="720" d:DesignWidth="1040"
+    Title="ListSubjectPage" Background="#FFF3F3F3">
+    <Grid Margin="85,76,65,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="StudentsName" Text="Name" Grid.Row="0" Margin="0,0,0,0" FontSize="24" TextElement.FontFamily="Montserrat_Semi"/>
+        <TextBlock Name="StudentsNrp"  Text="Nrp" Grid.Row="1" Margin="0,12,0,0" FontSize="16" TextElement.FontFamily="Montserrat_Regular"/>
+        <ItemsControl Name="icListSubject" Grid.Row="10" Margin="0,32,0,0">
+            <ItemsControl.ItemContainerStyle>
+                <Style>
+                    <Setter Property="FrameworkElement.Margin" Value="0, 0, 0, 26"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3" Margin="0,0,0,0"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <materialDesign:Card Height="82" Width="266">
+                        <materialDesign:Card.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding ListStudentSubjectsCommand}" CommandParameter="{Binding StudentSubject}"/>
+                        </materialDesign:Card.InputBindings>
+                        <Grid VerticalAlignment="Center" Margin="15,0,27,0">
+                            <TextBlock Name="tbSubject" HorizontalAlignment="Left" TextTrimming="CharacterEllipsis" 
+                                           Text="{Binding StudentSubject.Subject.Name}" VerticalAlignment="Top" FontSize="14" Width="230" 
+                                           TextElement.FontFamily="Montserrat" TextElement.FontWeight="Medium"/>
+                            <materialDesign:PackIcon Kind="NavigateNext" HorizontalAlignment="Right"/>
+                        </Grid>
+                    </materialDesign:Card>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</basic1:MyPage>
