@@ -12,7 +12,7 @@ namespace SquareCheck_desktop.ListSubject
 
     public class ListSubjectContext
     {
-        ICommand _command = new ListSubjectCommand();
+        ICommand _command;
         public DepartmentSummaryModel DepartmentSummary { get; set; }
 
         public ICommand ListSubjectCommand
@@ -20,13 +20,14 @@ namespace SquareCheck_desktop.ListSubject
             get { return _command; }
         }
 
-        public static List<ListSubjectContext> FromDepartmentSummary(List<DepartmentSummaryModel> departmentSummaries)
+        public static List<ListSubjectContext> FromDepartmentSummary(List<DepartmentSummaryModel> departmentSummaries, Action<DepartmentSummaryModel> goToListSubjectofDepartment)
         {
             var list = new List<ListSubjectContext>();
             foreach(var summary in departmentSummaries)
             {
                 var context = new ListSubjectContext();
                 context.DepartmentSummary = summary;
+                context._command = new ListSubjectCommand(goToListSubjectofDepartment);
                 list.Add(context);
             }
             return list;
@@ -35,8 +36,14 @@ namespace SquareCheck_desktop.ListSubject
 
     public class ListSubjectCommand : ICommand
     {
-        public event EventHandler CanExecuteChanged;
+        private Action<DepartmentSummaryModel> goToListSubjectofDepartment;
 
+        public event EventHandler CanExecuteChanged;
+        
+        public ListSubjectCommand(Action<DepartmentSummaryModel> goToListSubjectofDepartment)
+        {
+            this.goToListSubjectofDepartment = goToListSubjectofDepartment;
+        }
         public bool CanExecute(object parameter)
         {
             return true;
@@ -46,6 +53,7 @@ namespace SquareCheck_desktop.ListSubject
         {
             // Change to Other Page
             Console.WriteLine(parameter);
+            goToListSubjectofDepartment((DepartmentSummaryModel)parameter);
         }
     }
 }

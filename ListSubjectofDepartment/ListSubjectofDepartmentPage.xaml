@@ -1,0 +1,62 @@
+﻿<basic:MyPage 
+      x:Class="SquareCheck_desktop.ListSubjectofDepartment.ListSubjectofDepartmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SquareCheck_desktop.ListSubjectofDepartment"
+      xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1130"
+      Title="ListSubjectofDepartmentPage" Background="#FFF3F3F3">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="*"/>
+        </Grid.ColumnDefinitions>
+        <materialDesign:Card Grid.Row="0" VerticalAlignment="Top" Height="82" Width="Auto">
+            <Grid HorizontalAlignment="Left">
+                <TextBlock HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Mata Kuliah" VerticalAlignment="Top" FontSize="16" Width="120" Foreground="blue"/>
+                <TextBlock HorizontalAlignment="Left" Margin="132,32,0,0" TextWrapping="Wrap" Text="/" VerticalAlignment="Top" FontSize="16" Width="120" />
+                <TextBlock Name="DepartmentName" HorizontalAlignment="Left" Margin="150,32,0,28" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="16"/>
+            </Grid>
+            <!--<TextBlock Name="matakuliah" HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Matakuliah" VerticalAlignment="Top" FontSize="16"/>-->
+        </materialDesign:Card>
+        <ItemsControl Name="icListSubject">
+            <ItemsControl.ItemContainerStyle>
+                <Style>
+                    <Setter Property="FrameworkElement.Margin" Value="9"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3" Margin="0,180,0,0"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <materialDesign:Card Height="133" Width="273">
+                        <materialDesign:Card.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding ListSubjectofDepartmentCommand}" CommandParameter="{Binding Subject.Id}"/>
+                        </materialDesign:Card.InputBindings>
+                        <Grid HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="273">
+                            <TextBlock Name="tbSubjectName" HorizontalAlignment="Left" Margin="24,16,0,0" TextWrapping="Wrap" Text="{Binding Subject.Name}" VerticalAlignment="Top" FontSize="24" Width="150" />
+                            <TextBlock Name="tbLecturerName" HorizontalAlignment="Left" Margin="24,0,0,16" TextWrapping="Wrap" Text="{Binding Subject.Lecturer.Name}" VerticalAlignment="Bottom" FontSize="16" Foreground="Blue"/>
+                        </Grid>
+                    </materialDesign:Card>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <ScrollViewer x:Name="ScrollViewer">
+                        <ItemsPresenter />
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ItemsControl.Template>
+        </ItemsControl>
+    </Grid>
+</basic:MyPage>

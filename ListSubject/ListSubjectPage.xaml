@@ -35,7 +35,7 @@
                 <DataTemplate>
                     <materialDesign:Card Height="133" Width="273">
                         <materialDesign:Card.InputBindings>
-                            <MouseBinding MouseAction="LeftClick" Command="{Binding ListSubjectCommand}" CommandParameter="{Binding DepartmentSummary.Id}"/>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding ListSubjectCommand}" CommandParameter="{Binding DepartmentSummary}"/>
                         </materialDesign:Card.InputBindings>
                         <Grid HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="273">
                             <TextBlock Name="tbSubject" HorizontalAlignment="Left" Margin="24,16,0,0" TextWrapping="Wrap" Text="{Binding DepartmentSummary.Name}" VerticalAlignment="Top" FontSize="16" Width="120" />
