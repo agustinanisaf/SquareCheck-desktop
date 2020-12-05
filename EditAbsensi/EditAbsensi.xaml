@@ -20,7 +20,7 @@
         <materialDesign:Card Grid.Row="0" VerticalAlignment="Top" Height="82" Width="Auto">
             <TextBlock HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Matakuliah" VerticalAlignment="Top" FontSize="16"/>
         </materialDesign:Card>
-        <materialDesign:Card Height="350" Width="350" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <materialDesign:Card Height="350" Width="350" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,200,0,0">
             <Grid Margin="2,12,-2,-12">
                 <Grid HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="273" Margin="30,15,0,0">
                     <TextBlock Style="{DynamicResource MaterialDesignTextBlock}" FontSize="18">Absensi Mahasiswa</TextBlock>
@@ -31,33 +31,19 @@
                         <RowDefinition Height="252*" />
                         <!--   <RowDefinition Height="12*" />-->
                     </Grid.RowDefinitions>
-                    <TextBox Height="23" HorizontalAlignment="Left" Margin="30,0,0,0" Name="textBoxFirstName" VerticalAlignment="Top" Width="222" />
-                    <TextBox Height="23" HorizontalAlignment="Left" Margin="30,30,0,0" Name="textBoxLastName" VerticalAlignment="Top" Width="222" />
-                    <TextBox Height="23" HorizontalAlignment="Left" Margin="30,60,0,0" Name="textBoxEmail" VerticalAlignment="Top" Width="222" />
-                    <TextBox Height="23" HorizontalAlignment="Left" Margin="30,90,0,66" Name="textBoxAddress" VerticalAlignment="Top" Width="222" />
+                    <TextBox Height="25" HorizontalAlignment="Left" Margin="30,0,0,0" x:Name="textBoxMahasiswa" Text="Mahasiswa" VerticalAlignment="Top" Width="280" IsEnabled="False" />
+                    <TextBox Height="25" HorizontalAlignment="Left" Margin="30,40,0,0" x:Name="textBoxJadwal" Text="Jadwal" VerticalAlignment="Top" Width="280" IsEnabled="False"/>
+                    <TextBox Height="25" HorizontalAlignment="Left" Margin="30,80,0,0" x:Name="textBoxTanggal" Text="Tanggal" VerticalAlignment="Top" Width="280" IsEnabled="False"/>
+                    <ComboBox Height="25" Width="280" x:Name="comboBoxStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,120,0,0">
+                        <ComboBoxItem IsSelected="True">Hadir</ComboBoxItem>
+                        <ComboBoxItem>Sakit</ComboBoxItem>
+                        <ComboBoxItem>Izin</ComboBoxItem>
+                        <ComboBoxItem>Alpha</ComboBoxItem>
+                    </ComboBox>
+                    <Button Content="Simpan" Height="27" HorizontalAlignment="Right" Margin="183,160,12,0" Name="Simpan" VerticalAlignment="Top" Width="80" Background="#FF0DA9FD" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="saveButton_clicked"/>
+                    <Button Content="Batal" Height="27" HorizontalAlignment="Right" Margin="0,160,100,0" Name="Batal" VerticalAlignment="Top" Width="80" Foreground="#000000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFF"/>
                 </Grid>
             </Grid>
         </materialDesign:Card>
-        <ItemsControl Name="icStudentAttendance" Margin="0,2,0,-2">
-            <ItemsControl.ItemContainerStyle>
-                <Style>
-                    <Setter Property="FrameworkElement.Margin" Value="9"/>
-                </Style>
-            </ItemsControl.ItemContainerStyle>
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <UniformGrid Columns="3" Margin="0,180,0,0"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <materialDesign:Card Height="133" Width="273" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <Grid HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="273">
-                            <TextBlock Style="{DynamicResource MaterialDesignTextBlock}" FontSize="20">Absensi Mahasiswa</TextBlock>
-                        </Grid>
-                    </materialDesign:Card>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
     </Grid>
 </basic:MyPage>

@@ -122,7 +122,7 @@ namespace SquareCheck_desktop.Api
             var request = new ApiRequestBuilder()
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
-                .addParameters("student_id", attendance.StudentId.ToString())
+                .addParameters("student_id", attendance.Student.Id.ToString())
                 .addParameters("status", attendance.Status)
                 .setRequestMethod(HttpMethod.Put)
                 .getApiRequestBundle();
