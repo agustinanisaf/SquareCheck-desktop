@@ -88,6 +88,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="SubjectDetail\SubjectDetail.xaml.cs">
+      <DependentUpon>SubjectDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubjectDetail\SubjectDetailController.cs" />
+    <Compile Include="SubjectDetail\SubjectDetailModel.cs" />
     <Page Include="ListStudentSubjects\ListStudentSubjectsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -154,6 +159,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SubjectDetail\SubjectDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Private\PrivatePage.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
