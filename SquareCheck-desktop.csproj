@@ -88,6 +88,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ListMahasiswaJurusan\ListMahasiswaJurusanPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ListMahasiswa\ListMahasiswa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,6 +112,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ListMahasiswaJurusan\ListMahasiswaJurusanController.cs" />
+    <Compile Include="ListMahasiswaJurusan\ListMahasiswaJurusanPage.xaml.cs">
+      <DependentUpon>ListMahasiswaJurusanPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ListMahasiswa\ListMahasiswa.xaml.cs">
       <DependentUpon>ListMahasiswa.xaml</DependentUpon>

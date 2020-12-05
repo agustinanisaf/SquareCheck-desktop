@@ -1,17 +1,6 @@
-﻿using SquareCheck_desktop.Model;
-using System;
+﻿using SquareCheck_desktop.ListMahasiswaJurusan;
+using SquareCheck_desktop.Model;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Velacro.UIElements.Basic;
 
 namespace SquareCheck_desktop.ListMahasiswa
@@ -38,7 +27,14 @@ namespace SquareCheck_desktop.ListMahasiswa
         {
             this.Dispatcher.Invoke(() =>
             {
-                icListMahasiswa.ItemsSource = ListMahasiswaContext.FromDepartmentSummary(items);
+                icListMahasiswa.ItemsSource = ListMahasiswaContext.FromDepartmentSummary(items, GoToListMahasiswaJurusan);
+            });
+        }
+
+        public void GoToListMahasiswaJurusan(int jurusanId)
+        {
+            this.Dispatcher.Invoke(() => {
+                NavigationService.Navigate(new ListMahasiswaJurusanPage(jurusanId));
             });
         }
     }

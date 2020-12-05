@@ -1,0 +1,108 @@
+﻿<basic:MyPage x:Class="SquareCheck_desktop.ListMahasiswaJurusan.ListMahasiswaJurusanPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SquareCheck_desktop.ListMahasiswaJurusan"
+      xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1080"
+      Title="ListMahasiswaJurusanPage">
+
+    <Grid Background="White">
+        <DataGrid
+            Foreground="#444444"
+            ItemsSource="{Binding dg_mahasiswa}"
+            CanUserAddRows="False"
+            AutoGenerateColumns="False"
+            ColumnWidth="*"
+            IsReadOnly="True"
+            AlternatingRowBackground="LightGray"
+            x:Name="ListMahasiswa"
+            ScrollViewer.CanContentScroll="True" 
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+            HeadersVisibility="All" Margin="54,128,62,56" HorizontalAlignment="Center" Width="964">
+            <!--<DataGrid.Resources>
+                -->
+            <!--<domain:BindingProxy
+      x:Key="DataContextProxy"
+      Data="{Binding}" xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" />-->
+            <!--
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn
+      Binding="{Binding Code}"
+      Header="NRP"
+      ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
+                -->
+            <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
+            <!--
+                <materialDesign:DataGridTextColumn
+      Header="Nama"
+      ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
+                    <materialDesign:DataGridTextColumn.Binding>
+                        <Binding
+          Path="Nama">
+                            <Binding.ValidationRules>
+                                -->
+            <!--<domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" />-->
+            <!--
+                            </Binding.ValidationRules>
+                        </Binding>
+                    </materialDesign:DataGridTextColumn.Binding>
+                </materialDesign:DataGridTextColumn>
+                -->
+            <!-- set a max length to get an indicator in the editor -->
+            <!--
+                <DataGridTextColumn
+      Header="Jurusan"
+      ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                    <DataGridTextColumn.Binding>
+                        <Binding
+          Path="Jurusan">
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+      Header="Detail"
+      ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
+      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
+                    <DataGridTextColumn.Binding>
+                        <Binding
+          Path="Detail">
+                        </Binding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+            </DataGrid.Columns>-->
+            <DataGrid.Columns>
+                <DataGridTextColumn Foreground="#444" Header="NRP" Binding="{Binding Nrp}"/>
+                <DataGridTextColumn Foreground="#444" Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Foreground="#444" Header="Jurusan" Binding="{Binding Department.Name}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        Action
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button  Click="Edit_click" Name="btnView">
+                                <materialDesign:PackIcon Kind="Eye"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</basic:MyPage>
