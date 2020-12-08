@@ -50,6 +50,13 @@ namespace SquareCheck_desktop.Api
             }
         }
 
+        public static async Task PostMe(Action<HttpResponseBundle> successAction)
+        {
+            string _endpoint = "/auth/me";
+
+            await SetupGetRequest(_endpoint, successAction);
+        }
+
         public static async Task GetListStudent(Action<HttpResponseBundle> successAction)
         {
             string _endpoint = "/departments/students";
@@ -113,6 +120,14 @@ namespace SquareCheck_desktop.Api
             await SetupGetRequest(_endpoint, successAction);
         }
 
+        public static async Task GetDetailSchedule(Action<HttpResponseBundle> successAction, int scheduleId)
+        {
+            string _endpoint = "/schedules/:id";
+            _endpoint = _endpoint.Replace(":id", scheduleId.ToString());
+
+            await SetupGetRequest(_endpoint, successAction);
+        }
+
         public static async Task EditAttendance(Action<HttpResponseBundle> successAction, int scheduleId, AttendanceModel attendance)
         {
             string _endpoint = "/schedules/:id/attendances";
@@ -122,7 +137,7 @@ namespace SquareCheck_desktop.Api
             var request = new ApiRequestBuilder()
                 .buildHttpRequest()
                 .setEndpoint(_endpoint)
-                .addParameters("student_id", attendance.StudentId.ToString())
+                .addParameters("student_id", attendance.Student.Id.ToString())
                 .addParameters("status", attendance.Status)
                 .setRequestMethod(HttpMethod.Put)
                 .getApiRequestBundle();

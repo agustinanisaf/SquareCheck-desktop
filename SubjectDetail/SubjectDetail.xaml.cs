@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Velacro.UIElements.Basic;
 using SquareCheck_desktop.Model;
+using SquareCheck_desktop.DetailKehadiranMatakuliah;
 
 namespace SquareCheck_desktop.SubjectDetail
 {
@@ -30,7 +31,14 @@ namespace SquareCheck_desktop.SubjectDetail
         {
             this.Dispatcher.Invoke(() =>
             {
-                icSubjectDetail.ItemsSource = items;
+                icSubjectDetail.ItemsSource = SubjectDetailContext.FromSchedules(items, GoToDetailKehadiranMatakuliah);
+            });
+        }
+
+        public void GoToDetailKehadiranMatakuliah(ScheduleModel schedule)
+        {
+            this.Dispatcher.Invoke(() => {
+                this.NavigationService.Navigate(new DetailKehadiranMatakuliahPage(schedule));
             });
         }
     }

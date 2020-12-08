@@ -22,17 +22,19 @@
                 <TextBox Margin="0 32 0 0" x:Name="email_tf"
   materialDesign:HintAssist.Hint="Email"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-  VerticalAlignment="Center" />
+  materialDesign:HintAssist.Foreground="DodgerBlue"
+  materialDesign:TextFieldAssist.UnderlineBrush="DodgerBlue"
+                         VerticalAlignment="Center" />
                 <PasswordBox Margin="0 16 0 0"
   x:Name="password_tf"
   materialDesign:HintAssist.Hint="Password"
-  materialDesign:HintAssist.Foreground="Green"
-  materialDesign:TextFieldAssist.UnderlineBrush="Green"
+  materialDesign:HintAssist.Foreground="DodgerBlue"
+  materialDesign:TextFieldAssist.UnderlineBrush="DodgerBlue"
   Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
                 <Button Margin="0 24 0 0" Click="login_btn_Click"
   Style="{StaticResource MaterialDesignRaisedButton}"
   ToolTip="Resource name: MaterialDesignRaisedButton"
-  Content="LOGIN" x:Name="login_btn" Background="#FF0DA9FD" />
+  Content="LOGIN" x:Name="login_btn" Background="DodgerBlue" />
             </StackPanel>
         </Grid>
         <Grid HorizontalAlignment="Right" Width="880" Background="#FF0288D1">

@@ -35,7 +35,7 @@
                             </materialDesign:PackIcon>
                             <StackPanel Orientation="Vertical" Margin="20 0">
                                 <TextBlock Text="Darto" x:Name="username" FontSize="15"/>
-                                <TextBlock Text="Admin" FontSize="10"/>
+                                <TextBlock Text="Admin" FontSize="10" Width="70" TextWrapping="Wrap"/>
                             </StackPanel>
                         </StackPanel>
                     </ListViewItem>
