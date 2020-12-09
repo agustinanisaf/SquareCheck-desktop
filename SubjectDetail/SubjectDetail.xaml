@@ -1,0 +1,51 @@
+﻿<basic1:MyPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:SquareCheck_desktop.SubjectDetail"
+    xmlns:basic1="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+    x:Class="SquareCheck_desktop.SubjectDetail.SubjectDetail"
+    mc:Ignorable="d" 
+    d:DesignHeight="720" d:DesignWidth="1040"
+    Title="Detail Mata Kuliah" Background="#FFF3F3F3">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="*"/>
+        </Grid.ColumnDefinitions>
+        <materialDesign:Card Grid.Row="0" VerticalAlignment="Top" Height="82" Width="1040">
+            <TextBlock HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Matakuliah" VerticalAlignment="Top" FontSize="16"/>
+        </materialDesign:Card>
+        <TextBlock Name="tbSubject" HorizontalAlignment="Left" Margin="24,100,0,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" FontSize="12" Width="120" />
+        <TextBlock Name="tbClassroom" HorizontalAlignment="Left" Margin="24,150,0,0" TextWrapping="Wrap" Text="{Binding Classroom.Name}" VerticalAlignment="Top" FontSize="12" Width="120" />
+        <TextBlock Name="tbLecturer" HorizontalAlignment="Right" Margin="24,100,24,0" TextWrapping="Wrap" Text="{Binding Lecturer.Name}" VerticalAlignment="Top" FontSize="12" Width="120" />
+        <ItemsControl Name="icSubjectDetail">
+            <ItemsControl.ItemContainerStyle>
+                <Style>
+                    <Setter Property="FrameworkElement.Margin" Value="9"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3" Margin="0,180,0,0"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <materialDesign:Card Height="80" Width="273">
+                        <materialDesign:Card.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding SubjectDetailCommand}" CommandParameter="{Binding Schedule}"/>
+                        </materialDesign:Card.InputBindings>
+                        <Grid HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="273">
+                            <TextBlock Name="tbTime" HorizontalAlignment="Left" Margin="24,16,0,0" TextWrapping="Wrap" Text="{Binding Schedule.Time}" VerticalAlignment="Top" FontSize="16" Width="120" />
+                        </Grid>
+                    </materialDesign:Card>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</basic1:MyPage>

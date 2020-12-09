@@ -41,11 +41,12 @@
                 <DataTemplate>
                     <materialDesign:Card Height="133" Width="273">
                         <materialDesign:Card.InputBindings>
-                            <MouseBinding MouseAction="LeftClick" Command="{Binding ListSubjectofDepartmentCommand}" CommandParameter="{Binding Subject.Id}"/>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding ListSubjectofDepartmentCommand}" CommandParameter="{Binding Subject}"/>
                         </materialDesign:Card.InputBindings>
                         <Grid HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="273">
-                            <TextBlock Name="tbSubjectName" HorizontalAlignment="Left" Margin="24,16,0,0" TextWrapping="Wrap" Text="{Binding Subject.Name}" VerticalAlignment="Top" FontSize="24" Width="150" />
-                            <TextBlock Name="tbLecturerName" HorizontalAlignment="Left" Margin="24,0,0,16" TextWrapping="Wrap" Text="{Binding Subject.Lecturer.Name}" VerticalAlignment="Bottom" FontSize="16" Foreground="Blue"/>
+                            <TextBlock Name="tbSubjectName" HorizontalAlignment="Left" Margin="24,16,0,0" TextWrapping="Wrap" Text="{Binding Subject.Name}" VerticalAlignment="Top" FontSize="18" FontWeight="Medium" Width="150" />
+                            <TextBlock Name="tbClassName" HorizontalAlignment="Left" Margin="24,8,0,16" TextWrapping="Wrap" Text="{Binding Subject.Classroom.Slug}" VerticalAlignment="Center" FontSize="16" Foreground="#444"/>
+                            <TextBlock Name="tbLecturerName" HorizontalAlignment="Left" Margin="24,0,0,16" TextWrapping="Wrap" Text="{Binding Subject.Lecturer.Name}" VerticalAlignment="Bottom" FontSize="14" Foreground="DodgerBlue"/>
                         </Grid>
                     </materialDesign:Card>
                 </DataTemplate>

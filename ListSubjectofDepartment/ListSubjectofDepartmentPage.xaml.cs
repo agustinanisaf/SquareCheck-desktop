@@ -1,6 +1,4 @@
-﻿using SquareCheck_desktop.ListSubjectofDepartment;
-using SquareCheck_desktop.Model;
-using System;
+﻿using SquareCheck_desktop.Model;
 using System.Collections.Generic;
 using Velacro.UIElements.Basic;
 
@@ -32,7 +30,14 @@ namespace SquareCheck_desktop.ListSubjectofDepartment
         {
             this.Dispatcher.Invoke(() =>
             {
-                icListSubject.ItemsSource = ListSubjectofDepartmentContext.FromSubject(subjects);
+                icListSubject.ItemsSource = ListSubjectofDepartmentContext.FromSubject(subjects, GoToSubjectDetail);
+            });
+        }
+
+        public void GoToSubjectDetail(SubjectModel subject)
+        {
+            this.Dispatcher.Invoke(() => {
+                this.NavigationService.Navigate(new SubjectDetail.SubjectDetail(subject));
             });
         }
     }

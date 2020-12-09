@@ -88,9 +88,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Private\PrivatePageController.cs" />
+    <Compile Include="SubjectDetail\SubjectDetail.xaml.cs">
+      <DependentUpon>SubjectDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubjectDetail\SubjectDetailContext.cs" />
+    <Compile Include="SubjectDetail\SubjectDetailController.cs" />
+    <Compile Include="SubjectDetail\SubjectDetailModel.cs" />
     <Page Include="DetailKehadiranMahasiswa\DetailKehadiranMahasiswaPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DetailKehadiranMatakuliah\DetailKehadiranMatakuliahPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="ListStudentSubjects\ListStudentSubjectsPage.xaml">
       <SubType>Designer</SubType>
@@ -124,6 +135,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DetailKehadiranMatakuliah\DetailKehadiranMatakuliahController.cs" />
+    <Compile Include="DetailKehadiranMatakuliah\DetailKehadiranMatakuliahPage.xaml.cs">
+      <DependentUpon>DetailKehadiranMatakuliahPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="DetailKehadiranMahasiswa\DetailKehadiranMahasiswaContext.cs" />
     <Compile Include="DetailKehadiranMahasiswa\DetailKehadiranMahasiswaController.cs" />
@@ -163,6 +178,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SubjectDetail\SubjectDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Private\PrivatePage.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>

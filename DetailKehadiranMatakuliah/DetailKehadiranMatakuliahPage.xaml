@@ -1,0 +1,74 @@
+﻿<basic:MyPage x:Class="SquareCheck_desktop.DetailKehadiranMatakuliah.DetailKehadiranMatakuliahPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SquareCheck_desktop.DetailKehadiranMatakuliah"
+      xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="DetailKehadiranMatakuliahPage">
+
+    <Grid Background="White">
+        <materialDesign:Card Height="70" Margin="0,10,0,640">
+            <Grid Margin="20 15">
+                <TextBlock Text="Matakuliah" Name="Breadcrumbs" FontSize="20" VerticalAlignment="Center"/>
+            </Grid>
+        </materialDesign:Card>
+        <StackPanel Orientation="Horizontal" Margin="158,98,158,518">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                <TextBlock FontWeight="Medium" FontSize="32" x:Name="Subject" Text="subject"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="class" x:Name="ClassSlug" FontSize="24"/>
+                    <TextBlock Text=" - time" x:Name="DateSchedule" Margin="10 0" FontSize="24" Foreground="DarkCyan"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <Button Background="#0288D1" HorizontalAlignment="Right" Content="Export PDF" Margin="0,138,158,550" />
+
+
+        <TextBlock Text="No Attendance" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="Message_text"/>
+        <DataGrid
+            Foreground="#444"
+            ItemsSource="{Binding dg_mahasiswa}"
+            CanUserAddRows="False"
+            AutoGenerateColumns="False"
+            ColumnWidth="*"
+            IsReadOnly="True"
+            AlternatingRowBackground="LightGray"
+            x:Name="ListMahasiswa"
+            ScrollViewer.CanContentScroll="True"
+            ScrollViewer.VerticalScrollBarVisibility="Auto"
+            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+            HeadersVisibility="All" HorizontalAlignment="Center" Width="964" Margin="158,207,158,64">
+            <DataGrid.Columns>
+                <DataGridTextColumn Foreground="#444" Binding="{Binding Student.Nrp}" Header="NRP" />
+                <DataGridTextColumn Foreground="#444" Binding="{Binding Student.Name}" Header="Nama" />
+                <DataGridTextColumn Foreground="#444" Binding="{Binding Time}" Header="Waktu" />
+                <DataGridTextColumn Foreground="#444" Binding="{Binding Status}" Header="Status" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        Action
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="btnEdit_Click" Name="btnEdit">
+                                <materialDesign:PackIcon Kind="Pencil"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</basic:MyPage>
+    
+    

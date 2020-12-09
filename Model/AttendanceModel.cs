@@ -2,7 +2,7 @@
 {
     public class AttendanceModel
     {
-        public int StudentId { get; set; }
+        public StudentModel Student { get; set; }
         public string Time { get; set; }
         public string Status { get; set; }
     }

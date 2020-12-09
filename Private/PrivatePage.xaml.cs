@@ -1,4 +1,5 @@
 ﻿using SquareCheck_desktop.ListSubject;
+using SquareCheck_desktop.Model;
 using System.Windows;
 using Velacro.UIElements.Basic;
 
@@ -13,11 +14,14 @@ namespace SquareCheck_desktop.Private
         {
             InitializeComponent();
             this.KeepAlive = true;
+            setController(new PrivatePageController(this));
+            getController().callMethod("getUserData");
         }
 
         private void logout_selected(object sender, RoutedEventArgs e)
         {
-            this.Dispatcher.Invoke(() => {
+            this.Dispatcher.Invoke(() =>
+            {
                 this.NavigationService.GoBack();
                 this.NavigationService.RemoveBackEntry();
             });
@@ -36,6 +40,14 @@ namespace SquareCheck_desktop.Private
         private void home_selected(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        public void showInfoUser(UserModel model)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                username.Text = model.Email;
+            });
         }
     }
 }
