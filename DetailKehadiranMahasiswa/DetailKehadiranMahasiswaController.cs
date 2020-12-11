@@ -18,21 +18,14 @@ namespace SquareCheck_desktop.DetailKehadiranMahasiswa
 
         public async void getListDetailKehadiranMahasiswa(int subjectId) 
         {
-            try
-            {
-                await ApiGenerator.GetListDetailKehadiranMahasiswa(viewShowListDetailKehadiranMahasiswa, subjectId);
-            }
-            catch (HttpRequestException exception)
-            {
-                Console.WriteLine(exception.Message);
-            }
+            await ApiGenerator.GetSubjectListSchedule(viewShowListDetailKehadiranMahasiswa, subjectId);
         }
 
         private void viewShowListDetailKehadiranMahasiswa(HttpResponseBundle _response)
         {
             if (_response.getHttpResponseMessage().Content != null)
             {
-                getView().callMethod("showListDetailKehadiranMahasiswa", _response.getParsedObject<APIResponse<List<AttendanceModel>>>().Data);
+                getView().callMethod("showListDetailKehadiranMahasiswa", _response.getParsedObject<APIResponse<List<ScheduleModel>>>().Data);
             }
         }
     }

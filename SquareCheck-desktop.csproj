@@ -140,7 +140,6 @@
     <Compile Include="DetailKehadiranMatakuliah\DetailKehadiranMatakuliahPage.xaml.cs">
       <DependentUpon>DetailKehadiranMatakuliahPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DetailKehadiranMahasiswa\DetailKehadiranMahasiswaContext.cs" />
     <Compile Include="DetailKehadiranMahasiswa\DetailKehadiranMahasiswaController.cs" />
     <Compile Include="DetailKehadiranMahasiswa\DetailKehadiranMahasiswaPage.xaml.cs">
       <DependentUpon>DetailKehadiranMahasiswaPage.xaml</DependentUpon>

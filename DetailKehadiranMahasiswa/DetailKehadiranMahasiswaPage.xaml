@@ -6,45 +6,46 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SquareCheck_desktop.DetailKehadiranMahasiswa"
       xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="DetailKehadiranMahasiswaPage" Background="#FFF3F3F3">
 
     <Grid Background="White">
-        <materialDesign:Card Grid.Row="0" VerticalAlignment="Top" Height="82" Width="Auto">
-            <Grid HorizontalAlignment="Left">
-                <TextBlock HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Mahasiswa" VerticalAlignment="Top" FontSize="16" Width="120" Foreground="blue"/>
-                <TextBlock HorizontalAlignment="Left" Margin="132,32,0,0" TextWrapping="Wrap" Text="/" VerticalAlignment="Top" FontSize="16" Width="120" Foreground="blue"/>
-                <TextBlock Name="DepartmentName" HorizontalAlignment="Left" Margin="150,32,0,28" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="16" Foreground="blue"/>
-                <TextBlock HorizontalAlignment="Left" Margin="292,32,0,0" TextWrapping="Wrap" Text="/" VerticalAlignment="Top" FontSize="16" Width="120" Foreground="blue"/>
-                <TextBlock Name="NRP" HorizontalAlignment="Left" Margin="308,32,0,28" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="16" Foreground="blue"/>
-                <TextBlock HorizontalAlignment="Left" Margin="404,32,0,0" TextWrapping="Wrap" Text="/" VerticalAlignment="Top" FontSize="16" Width="120" />
-                <TextBlock Name="MataKuliah" HorizontalAlignment="Left" Margin="420,32,0,28" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="16"/>
+        <materialDesign:Card Height="70" Margin="0,10,0,640">
+            <Grid Margin="20 15">
+                <TextBlock Text="Mahasiswa" Name="Breadcrumbs" FontSize="20" VerticalAlignment="Center" Foreground="Blue"/>
             </Grid>
         </materialDesign:Card>
-        <Grid HorizontalAlignment="Left">
-            <TextBlock HorizontalAlignment="Left" Margin="158,120,0,0" TextWrapping="Wrap" Text="Muhammad Riza Bachtiar" VerticalAlignment="Top" FontSize="32" Width="500" FontWeight="Bold"/>
-            <TextBlock HorizontalAlignment="Left" Margin="158,160,0,0" TextWrapping="Wrap" Text="2110181026" VerticalAlignment="Top" FontSize="20" Width="150" />
-            <TextBlock HorizontalAlignment="Left" Margin="275,158,0,28" TextWrapping="Wrap" Text="-" VerticalAlignment="Top" FontSize="20"/>
-            <TextBlock HorizontalAlignment="Left" Margin="295,160,0,0" TextWrapping="Wrap" Text="Mobile Programming" VerticalAlignment="Top" FontSize="20" Width="300" />
-        </Grid>
+        <StackPanel Orientation="Horizontal" Margin="158,120,158,518">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" x:Name="StudentName" TextWrapping="Wrap" Text="Muhammad Riza Bachtiar" VerticalAlignment="Top" FontSize="32" Width="500" FontWeight="Bold"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0,0,0,0" Text="2110181026" x:Name="StudentNRP" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+                    <TextBlock Margin="10,0,0,0" Text="-" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+                    <TextBlock Margin="10,0,0,0" Text="Mobile Programming" x:Name="SubjectName" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <Button Background="#0288D1" HorizontalAlignment="Right" Content="Export PDF" Margin="0,138,158,550" />
+        <TextBlock Text="No Attendance" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="Message_text"/>
         <DataGrid
             Foreground="#444"
-            ItemsSource="{Binding dg_mahasiswa}"
+            ItemsSource="{Binding dg_jadwalmatakuliah}"
             CanUserAddRows="False"
             AutoGenerateColumns="False"
             ColumnWidth="*"
             IsReadOnly="True"
             AlternatingRowBackground="LightGray"
-            x:Name="ListWaktu"
+            x:Name="ListSchedule"
             ScrollViewer.CanContentScroll="True"
             ScrollViewer.VerticalScrollBarVisibility="Auto"
             ScrollViewer.HorizontalScrollBarVisibility="Auto"
             HeadersVisibility="All" HorizontalAlignment="Center" Width="964" Margin="158,231,158,0">
             <DataGrid.Columns>
-                <DataGridTextColumn Foreground="#444" Binding="{Binding Schedule.Time}" Header="Tanggal" />
-                <DataGridTextColumn Foreground="#444" Binding="{Binding Attendace.Time}" Header="Waktu" />
+                <DataGridTextColumn Foreground="#444" Binding="{Binding Schedule.Time}" Header="Tanggal"/>
+                <DataGridTextColumn Foreground="#444" Binding="{Binding Schedule.Attendace.Time}" Header="Waktu" />
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
