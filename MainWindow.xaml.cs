@@ -1,7 +1,6 @@
 ﻿using Velacro.UIElements.Basic;
 using SquareCheck_desktop.Private;
 using SquareCheck_desktop.Login;
-using SquareCheck_desktop.EditAbsensi;
 
 namespace SquareCheck_desktop
 {
@@ -15,8 +14,7 @@ namespace SquareCheck_desktop
         public MainWindow()
         {
             InitializeComponent();
-            MyPage edit = new EditAbsensi.EditAbsensi();
-            mainFrame.Navigate(edit);
+            GoToLoginPage();
         }
 
         public void GoToPrivatePage()
