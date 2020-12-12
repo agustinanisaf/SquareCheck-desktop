@@ -64,6 +64,13 @@ namespace SquareCheck_desktop.Api
             await SetupGetRequest(_endpoint, successAction);
         }
 
+        public static async Task GetListStudentLimit(Action<HttpResponseBundle> successAction, int limit)
+        {
+            string _endpoint = "/departments/students?limit=" + limit;
+
+            await SetupGetRequest(_endpoint, successAction);
+        }
+
         public static async Task GetDepartmentListStudent(Action<HttpResponseBundle> successAction, int departmentId)
         {
             string _endpoint = "/departments/:id/students";
@@ -92,6 +99,13 @@ namespace SquareCheck_desktop.Api
         public static async Task GetListSubject(Action<HttpResponseBundle> successAction)
         {
             string _endpoint = "/departments/subjects";
+
+            await SetupGetRequest(_endpoint, successAction);
+        }
+
+        public static async Task GetListSubjectLimit(Action<HttpResponseBundle> successAction, int limit)
+        {
+            string _endpoint = "/departments/subjects?limit=" + limit;
 
             await SetupGetRequest(_endpoint, successAction);
         }
