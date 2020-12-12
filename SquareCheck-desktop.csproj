@@ -92,6 +92,10 @@
     <Compile Include="DetailKehadiranMatakuliah\DetailKehadiranMatakuliahPage.xaml.cs">
       <DependentUpon>DetailKehadiranMatakuliahPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditAbsensi\EditAbsensi.xaml.cs">
+      <DependentUpon>EditAbsensi.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditAbsensi\EditAbsensiController.cs" />
     <Compile Include="Private\PrivatePageController.cs" />
     <Compile Include="SubjectDetail\SubjectDetail.xaml.cs">
       <DependentUpon>SubjectDetail.xaml</DependentUpon>
@@ -100,6 +104,10 @@
     <Compile Include="SubjectDetail\SubjectDetailController.cs" />
     <Compile Include="SubjectDetail\SubjectDetailModel.cs" />
     <Page Include="DetailKehadiranMatakuliah\DetailKehadiranMatakuliahPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EditAbsensi\EditAbsensi.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

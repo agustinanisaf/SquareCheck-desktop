@@ -142,6 +142,7 @@ namespace SquareCheck_desktop.Api
                 .setRequestMethod(HttpMethod.Put)
                 .getApiRequestBundle();
 
+            client.setAuthorizationToken(Token);
             client.setOnSuccessRequest(successAction);
             await client.sendRequest(request);
         }
