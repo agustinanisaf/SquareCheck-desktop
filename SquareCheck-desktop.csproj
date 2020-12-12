@@ -88,7 +88,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="EditAbsensi\EditAbsensi.xaml">
+    <Compile Include="DetailKehadiranMatakuliah\DetailKehadiranMatakuliahController.cs" />
+    <Compile Include="DetailKehadiranMatakuliah\DetailKehadiranMatakuliahPage.xaml.cs">
+      <DependentUpon>DetailKehadiranMatakuliahPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Private\PrivatePageController.cs" />
+    <Compile Include="SubjectDetail\SubjectDetail.xaml.cs">
+      <DependentUpon>SubjectDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SubjectDetail\SubjectDetailContext.cs" />
+    <Compile Include="SubjectDetail\SubjectDetailController.cs" />
+    <Compile Include="SubjectDetail\SubjectDetailModel.cs" />
+    <Page Include="DetailKehadiranMatakuliah\DetailKehadiranMatakuliahPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ListStudentSubjects\ListStudentSubjectsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListSubjectofDepartment\ListSubjectofDepartmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListMahasiswaJurusan\ListMahasiswaJurusanPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -113,16 +136,26 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="EditAbsensi\EditAbsensi.xaml.cs">
-      <DependentUpon>EditAbsensi.xaml</DependentUpon>
+    <Compile Include="ListStudentSubjects\ListStudentSubjectsController.cs" />
+    <Compile Include="ListStudentSubjects\ListStudentSubjectsPage.xaml.cs">
+      <DependentUpon>ListStudentSubjectsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditAbsensi\EditAbsensiController.cs" />
+    <Compile Include="ListSubjectofDepartment\ListSubjectofDepartmentPage.xaml.cs">
+      <DependentUpon>ListSubjectofDepartmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ListMahasiswaJurusan\ListMahasiswaJurusanController.cs" />
+    <Compile Include="ListMahasiswaJurusan\ListMahasiswaJurusanPage.xaml.cs">
+      <DependentUpon>ListMahasiswaJurusanPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ListMahasiswa\ListMahasiswa.xaml.cs">
       <DependentUpon>ListMahasiswa.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListSubjectofDepartment\ListSubjectofDepartmentController.cs" />
+    <Compile Include="ListSubjectofDepartment\ListSubjectofDepartmentContext.cs" />
     <Compile Include="ListMahasiswa\ListMahasiswaContext.cs" />
     <Compile Include="ListMahasiswa\ListMahasiswaController.cs" />
     <Compile Include="ListMahasiswa\ListMahasiswaModel.cs" />
+    <Compile Include="ListStudentSubjects\ListStudentSubjectsContext.cs" />
     <Compile Include="ListSubject\ListSubjectContext.cs" />
     <Compile Include="ListSubject\ListSubjectController.cs" />
     <Compile Include="ListSubject\ListSubjectPage.xaml.cs">
@@ -136,6 +169,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="SubjectDetail\SubjectDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Private\PrivatePage.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
@@ -144,6 +181,7 @@
   <ItemGroup>
     <Compile Include="Model\APIResponse.cs" />
     <Compile Include="Model\AttendanceModel.cs" />
+    <Compile Include="Model\StudentSubjectModel.cs" />
     <Compile Include="Model\ClassroomModel.cs" />
     <Compile Include="Model\DepartmentModel.cs" />
     <Compile Include="Model\DepartmentSummaryModel.cs" />
