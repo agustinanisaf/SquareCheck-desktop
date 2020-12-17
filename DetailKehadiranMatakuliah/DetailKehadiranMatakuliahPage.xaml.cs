@@ -12,11 +12,14 @@ namespace SquareCheck_desktop.DetailKehadiranMatakuliah
     /// </summary>
     public partial class DetailKehadiranMatakuliahPage : MyPage
     {
+        private ScheduleModel schedule;
+
         public DetailKehadiranMatakuliahPage(ScheduleModel schedule)
         {
             InitializeComponent();
             setController(new DetailKehadiranMatakuliahController(this));
             getController().callMethod("getData", schedule.Id);
+            this.schedule = schedule;
             ClassSlug.Text = schedule.Subject.Classroom.Slug;
             Subject.Text = schedule.Subject.Name;
             DateSchedule.Text = schedule.Time.ToString();
@@ -42,7 +45,7 @@ namespace SquareCheck_desktop.DetailKehadiranMatakuliah
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
             AttendanceModel row = (AttendanceModel)((Button)e.Source).DataContext;
-            //this.NavigationService.Navigate(new EditAbsensi(row.Student.Id));
+            this.NavigationService.Navigate(new EditAbsensi.EditAbsensi(this.schedule, row));
         }
     }
 }

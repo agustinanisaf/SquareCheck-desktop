@@ -1,0 +1,90 @@
+﻿<basic:MyPage x:Class="SquareCheck_desktop.Dashboard.DashboardPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SquareCheck_desktop.Dashboard"
+      xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="Dashboard">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="*"/>
+        </Grid.ColumnDefinitions>
+        <materialDesign:Card Grid.Row="0" VerticalAlignment="Top" Height="82" Width="Auto">
+            <TextBlock HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Home" VerticalAlignment="Top" FontSize="16"/>
+        </materialDesign:Card>
+        <Image Grid.Row="1" Source="/Dashboard/Banner.png" Margin="87,32"/>
+        <TextBlock Grid.Row="2" Margin="96,0,0,0">Mahasiswa</TextBlock>
+        <Button Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,96,0" Background="White" Foreground="#FF0288D1" Content="See More" BorderBrush="{x:Null}" Click="StudentButton_Click" />
+        <ItemsControl Grid.Row="3" Name="icStudent" Margin="96,0">
+            <ItemsControl.ItemContainerStyle>
+                <Style>
+                    <Setter Property="FrameworkElement.Margin" Value="9"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <materialDesign:Card Height="133" Width="273">
+                        <materialDesign:Card.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding ListMahasiswaCommand}" CommandParameter="{Binding DepartmentSummary.Id}"/>
+                        </materialDesign:Card.InputBindings>
+                        <Grid HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="273">
+                            <TextBlock Name="tbSubject" HorizontalAlignment="Left" Margin="24,16,0,0" TextWrapping="Wrap" Text="{Binding DepartmentSummary.Name}" VerticalAlignment="Top" FontSize="16" Width="120" />
+                            <TextBlock Name="tbSubjectTotal" HorizontalAlignment="Right" Margin="0,0,24,16" TextWrapping="Wrap" Text="{Binding DepartmentSummary.Count}" VerticalAlignment="Bottom" FontSize="48" />
+                        </Grid>
+                    </materialDesign:Card>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <TextBlock Grid.Row="4" Margin="96,0,0,0">Matakuliah</TextBlock>
+        <Button Grid.Row="4" HorizontalAlignment="Right" Margin="0,0,96,0" Background="White" Foreground="#FF0288D1" Content="See More" BorderBrush="{x:Null}" Click="SubjectButton_Click" />
+        <ItemsControl Grid.Row="5" Name="icSubjects" Margin="96,0">
+            <ItemsControl.ItemContainerStyle>
+                <Style>
+                    <Setter Property="FrameworkElement.Margin" Value="9"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="3"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <materialDesign:Card Height="133" Width="273">
+                        <materialDesign:Card.InputBindings>
+                            <MouseBinding MouseAction="LeftClick" Command="{Binding ListSubjectCommand}" CommandParameter="{Binding DepartmentSummary}"/>
+                        </materialDesign:Card.InputBindings>
+                        <Grid HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="273">
+                            <TextBlock Name="tbStudent" HorizontalAlignment="Left" Margin="24,16,0,0" TextWrapping="Wrap" Text="{Binding DepartmentSummary.Name}" VerticalAlignment="Top" FontSize="16" Width="120" />
+                            <TextBlock Name="tbStudentTotal" HorizontalAlignment="Right" Margin="0,0,24,16" TextWrapping="Wrap" Text="{Binding DepartmentSummary.Count}" VerticalAlignment="Bottom" FontSize="48" />
+                        </Grid>
+                    </materialDesign:Card>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</basic:MyPage>

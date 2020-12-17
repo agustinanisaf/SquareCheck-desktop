@@ -26,12 +26,12 @@ namespace SquareCheck_desktop.DetailKehadiranMahasiswa
             InitializeComponent();
             setController(new DetailKehadiranMahasiswaController(this));
             initUIBuilders();
-            initUIElements(studentSubjectModel.Subject.Id);
+            initUIElements(studentSubjectModel.Student.Id, studentSubjectModel.Subject.Id);
             StudentName.Text = studentSubjectModel.Student.Name;
             StudentNRP.Text = studentSubjectModel.Student.Nrp;
             SubjectName.Text = studentSubjectModel.Subject.Name;
-            Breadcrumbs.Text = " / " + studentSubjectModel.Student.Department 
-                + " / " + studentSubjectModel.Student.Nrp +  " / " 
+            Breadcrumbs.Text = "Mahasiswa " + " / " + studentSubjectModel.Student.Department.Name
+                + " / " + studentSubjectModel.Student.Name + " / "
                 + studentSubjectModel.Subject.Name;
         }
 
@@ -40,15 +40,16 @@ namespace SquareCheck_desktop.DetailKehadiranMahasiswa
             buttonBuilder = new BuilderButton();
         }
 
-        private void initUIElements(int studentSubjectId)
+        private void initUIElements(int studentId, int studentSubjectId)
         {
-            getController().callMethod("getListDetailKehadiranMahasiswa", studentSubjectId);
+            getController().callMethod("getListDetailKehadiranMahasiswa", studentId, studentSubjectId);
         }
 
         public void showListDetailKehadiranMahasiswa(List<ScheduleModel> model)
         {
             this.Dispatcher.Invoke(() =>
             {
+                Console.WriteLine(model);
                 if (0 != model.Count)
                 {
                     Message_text.Visibility = Visibility.Collapsed;

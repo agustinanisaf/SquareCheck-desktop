@@ -32,15 +32,12 @@ namespace SquareCheck_desktop.ListStudentSubjects
         {
             if (_response.getHttpResponseMessage().Content != null)
             {
-                string status = _response.getHttpResponseMessage().ReasonPhrase;
                 List<SubjectModel> dataSubject = _response.getParsedObject<APIResponse<List<SubjectModel>>>().Data;
-                List<ListStudentSubjectsContext> contextSubjects = ListStudentSubjectsContext.FromSubjectModel(dataSubject, Student);
-
                 Console.WriteLine(_response);
-                getView().callMethod("showListSubject", contextSubjects);
+                getView().callMethod("showListSubject", dataSubject);
             }
         }
-        
+
         public void viewShowStudentsProfile()
         {
             getView().callMethod("showStudentProfile", Student);

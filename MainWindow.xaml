@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Title="Square Checks - Admin" Height="720" Width="1280">
+        Title="Square Checks - Admin" Height="780" Width="1280">
     <Grid>
         <Frame Name="mainFrame" Content="Frame" Height="Auto" Width="Auto"/>
     </Grid>
