@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using Velacro.UIElements.Basic;
+using SquareCheck_desktop.DetailKehadiranMahasiswa;
 
 namespace SquareCheck_desktop.ListStudentSubjects
 {
@@ -10,9 +11,11 @@ namespace SquareCheck_desktop.ListStudentSubjects
     /// </summary>
     public partial class ListStudentSubjectsPage : MyPage
     {
+        private StudentModel student;
         public ListStudentSubjectsPage(StudentModel student)
         {
             this.KeepAlive = true;
+            this.student = student;
             setController(new ListStudentSubjectsController(this, student));
             initUIElements();
         }
@@ -22,11 +25,11 @@ namespace SquareCheck_desktop.ListStudentSubjects
             getController().callMethod("getListSubject");
         }
 
-        public void showListSubject(List<ListStudentSubjectsContext> items)
+        public void showListSubject(List<SubjectModel> items)
         {
             this.Dispatcher.Invoke(() =>
             {
-                icListSubject.ItemsSource = items;
+                icListSubject.ItemsSource = ListStudentSubjectsContext.FromSubjectModel(items, student, GoToListKehadiranMahasiswa);
             });
         }
 
@@ -36,6 +39,7 @@ namespace SquareCheck_desktop.ListStudentSubjects
             {
                 StudentsName.Text = student.Name;
                 StudentsNrp.Text = student.Nrp;
+
             });
         }
 
@@ -44,6 +48,14 @@ namespace SquareCheck_desktop.ListStudentSubjects
             base.OnInitialized(e);
             InitializeComponent();
             getController().callMethod("viewShowStudentsProfile");
+        }
+
+        public void GoToListKehadiranMahasiswa(StudentSubjectModel subject)
+        {
+            this.Dispatcher.Invoke(() =>
+            {
+                NavigationService.Navigate(new DetailKehadiranMahasiswaPage(subject));
+            });
         }
     }
 }
