@@ -13,6 +13,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="*"/>
@@ -20,28 +21,35 @@
         <materialDesign:Card Grid.Row="0" VerticalAlignment="Top" Height="82" Width="Auto">
             <TextBlock HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Matakuliah" VerticalAlignment="Top" FontSize="16"/>
         </materialDesign:Card>
-        <materialDesign:Card Height="350" Width="350" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,200,0,0">
-            <Grid Margin="2,12,-2,-12">
-                <Grid HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="273" Margin="30,15,0,0">
+        <materialDesign:Card Height="350" Width="350" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
+            <Grid>
+                <Grid HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto" Margin="30,15,0,0">
                     <TextBlock Style="{DynamicResource MaterialDesignTextBlock}" FontSize="18">Absensi Mahasiswa</TextBlock>
 
                 </Grid>
-                <Grid Margin="0,0,29,23" Background="White" Height="264" VerticalAlignment="Bottom">
+                <Grid Background="White" Height="264" Margin="30,0,30,0" VerticalAlignment="Bottom">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="252*" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                         <!--   <RowDefinition Height="12*" />-->
                     </Grid.RowDefinitions>
-                    <TextBox Height="25" HorizontalAlignment="Left" Margin="30,0,0,0" x:Name="textBoxMahasiswa" Text="Mahasiswa" VerticalAlignment="Top" Width="280" IsEnabled="False" />
-                    <TextBox Height="25" HorizontalAlignment="Left" Margin="30,40,0,0" x:Name="textBoxJadwal" Text="Jadwal" VerticalAlignment="Top" Width="280" IsEnabled="False"/>
-                    <TextBox Height="25" HorizontalAlignment="Left" Margin="30,80,0,0" x:Name="textBoxTanggal" Text="Tanggal" VerticalAlignment="Top" Width="280" IsEnabled="False"/>
-                    <ComboBox Height="25" Width="280" x:Name="comboBoxStatus" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,120,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Grid.Row="0" Height="25" HorizontalAlignment="Left" x:Name="textBoxMahasiswa" Text="Mahasiswa" VerticalAlignment="Top" Width="280" IsEnabled="False" />
+                    <TextBox Grid.Row="1" Height="25" HorizontalAlignment="Left" x:Name="textBoxJadwal" Text="Jadwal" VerticalAlignment="Top" Width="280" IsEnabled="False"/>
+                    <TextBox Grid.Row="2" HorizontalAlignment="Left" x:Name="textBoxTanggal" Text="Tanggal" VerticalAlignment="Top" Width="280" IsEnabled="False"/>
+                    <ComboBox Grid.Row="3" Height="25" Width="280" x:Name="comboBoxStatus" HorizontalAlignment="Left" VerticalAlignment="Top">
                         <ComboBoxItem>hadir</ComboBoxItem>
                         <ComboBoxItem>terlambat</ComboBoxItem>
                         <ComboBoxItem>izin</ComboBoxItem>
                         <ComboBoxItem>alpa</ComboBoxItem>
                     </ComboBox>
-                    <Button Content="Simpan" Height="27" HorizontalAlignment="Right" Margin="183,160,12,0" Name="Simpan" VerticalAlignment="Top" Width="80" Background="#FF0DA9FD" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="saveButton_clicked"/>
-                    <Button Content="Batal" Height="27" HorizontalAlignment="Right" Margin="0,160,100,0" Name="Batal" VerticalAlignment="Top" Width="80" Foreground="#000000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFF"/>
+                    <Button Grid.Row="4" Content="Simpan" Height="27" HorizontalAlignment="Right" Margin="0,16,0,0" Name="Simpan" VerticalAlignment="Top" Width="80" Background="#FF0DA9FD" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="saveButton_clicked" BorderBrush="{x:Null}"/>
+                    <Button Grid.Row="4" Content="Batal" Height="27" HorizontalAlignment="Right" Margin="0,16,96,0" Name="Batal" VerticalAlignment="Top" Width="80" Foreground="#000000" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFFFFF" BorderBrush="{x:Null}"/>
                 </Grid>
             </Grid>
         </materialDesign:Card>

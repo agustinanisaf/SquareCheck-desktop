@@ -10,27 +10,32 @@
   TextElement.Foreground="{DynamicResource MaterialDesignBody}"
   mc:Ignorable="d"
   d:DesignHeight="720"
-  d:DesignWidth="1080"
+  d:DesignWidth="1280"
   Title="DetailKehadiranMahasiswaPage"
-  Background="#FFF3F3F3">
+  Background="{DynamicResource MaterialDesignPaper}"
+  FontFamily="{DynamicResource MaterialDesignFont}">
 
-    <Grid Background="White">
-        <materialDesign:Card Height="70"
-                         Margin="0,0,0,640">
-            <Grid Margin="20 15">
-                <TextBlock Text="Mahasiswa"
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <materialDesign:Card Height="70" Grid.Row="0" VerticalAlignment="Top" Width="Auto">
+
+            <TextBlock Text="Mahasiswa"
+                       Margin="32,0,0,0"
                    Name="Breadcrumbs"
-                   FontSize="20"
-                   VerticalAlignment="Center"
-                   Foreground="DodgerBlue"/>
-            </Grid>
+                   FontSize="16"
+                   VerticalAlignment="Center"/>
         </materialDesign:Card>
-        <StackPanel Orientation="Horizontal"
-                Margin="158,120,158,518">
-            <StackPanel Orientation="Vertical"
+        <StackPanel Orientation="Vertical" Grid.Row="1"
+                    Margin="96,48,0,0"
                   VerticalAlignment="Center">
-                <TextBlock HorizontalAlignment="Left"
-                   Margin="0,0,0,0"
+            <TextBlock HorizontalAlignment="Left"
                    x:Name="StudentName"
                    TextWrapping="Wrap"
                    Text="Muhammad Riza Bachtiar"
@@ -38,37 +43,40 @@
                    FontSize="32"
                    Width="500"
                    FontWeight="Bold"/>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Margin="0,0,0,0"
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin="0,8,0,0"
                      Text="2110181026"
                      x:Name="StudentNRP"
                      TextWrapping="Wrap"
                      VerticalAlignment="Top"
                      FontSize="20"/>
-                    <TextBlock Margin="10,0,0,0"
+                <TextBlock Margin="10,8,0,0"
                      Text="-"
                      TextWrapping="Wrap"
                      VerticalAlignment="Top"
                      FontSize="20"/>
-                    <TextBlock Margin="10,0,0,0"
+                <TextBlock Margin="10,8,0,0"
                      Text="Mobile Programming"
                      x:Name="SubjectName"
                      TextWrapping="Wrap"
                      VerticalAlignment="Top"
                      FontSize="20"/>
-                </StackPanel>
             </StackPanel>
         </StackPanel>
         <Button Background="#0288D1"
+                Grid.Row="1"
+                Margin="0,0,96,0"
+                BorderBrush="{x:Null}"
             HorizontalAlignment="Right"
-            Content="Export PDF"
-            Margin="0,138,158,550" />
+            Content="Export PDF"/>
         <TextBlock Text="No Attendance"
+                   Grid.Row="2"
                FontSize="48"
                VerticalAlignment="Center"
                HorizontalAlignment="Center"
                x:Name="Message_text"/>
         <DataGrid
+            Grid.Row="2"
       Foreground="#444"
       ItemsSource="{Binding dg_jadwalmatakuliah}"
       CanUserAddRows="False"
@@ -82,7 +90,7 @@
       ScrollViewer.HorizontalScrollBarVisibility="Auto"
       HeadersVisibility="All"
       HorizontalAlignment="Center"
-      Width="764" Margin="158,237,158,56">
+      Width="Auto" Margin="96,32,96,64">
             <DataGrid.Columns>
                 <DataGridTextColumn Foreground="#444"
                             Binding="{Binding Schedule.Time}"

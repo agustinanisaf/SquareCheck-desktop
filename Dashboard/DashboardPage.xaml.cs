@@ -43,29 +43,33 @@ namespace SquareCheck_desktop.Dashboard
 
         public void GoToListSubject(DepartmentSummaryModel department)
         {
-            this.Dispatcher.Invoke(() => {
+            this.Dispatcher.Invoke(() =>
+            {
                 this.NavigationService.Navigate(new ListSubjectofDepartmentPage(department));
             });
         }
 
         public void GoToListStudent(int departmentId)
         {
-            this.Dispatcher.Invoke(() => {
+            this.Dispatcher.Invoke(() =>
+            {
                 this.NavigationService.Navigate(new ListMahasiswaJurusanPage(departmentId));
             });
         }
 
         private void StudentButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            this.Dispatcher.Invoke(() => {
-                this.NavigationService.Navigate(new ListSubjectPage());
+            this.Dispatcher.Invoke(() =>
+            {
+                this.NavigationService.Navigate(new ListMahasiswa.ListMahasiswa());
             });
         }
 
         private void SubjectButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-            this.Dispatcher.Invoke(() => {
-                this.NavigationService.Navigate(new ListMahasiswa.ListMahasiswa());
+            this.Dispatcher.Invoke(() =>
+            {
+                this.NavigationService.Navigate(new ListSubjectPage());
             });
         }
     }

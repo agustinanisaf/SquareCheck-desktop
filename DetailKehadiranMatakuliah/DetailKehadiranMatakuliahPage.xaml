@@ -18,25 +18,32 @@
       Title="DetailKehadiranMatakuliahPage">
 
     <Grid Background="White">
-        <materialDesign:Card Height="70" Margin="0,10,0,640">
-            <Grid Margin="20 15">
-                <TextBlock Text="Matakuliah" Name="Breadcrumbs" FontSize="20" VerticalAlignment="Center"/>
-            </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <materialDesign:Card Height="82" Grid.Row="0" VerticalAlignment="Top">
+            <TextBlock Margin="32,0,0,0" Text="Matakuliah" Name="Breadcrumbs" FontSize="16" VerticalAlignment="Center"/>
         </materialDesign:Card>
-        <StackPanel Orientation="Horizontal" Margin="158,98,158,518">
-            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center"  Margin="96,48,0,0">
                 <TextBlock FontWeight="Medium" FontSize="32" x:Name="Subject" Text="subject"/>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="class" x:Name="ClassSlug" FontSize="24"/>
-                    <TextBlock Text=" - time" x:Name="DateSchedule" Margin="10 0" FontSize="24" Foreground="DarkCyan"/>
+                    <TextBlock Text="class" x:Name="ClassSlug" FontSize="24" Margin="0 8"/>
+                    <TextBlock Text=" - time" x:Name="DateSchedule" Margin="10 8" FontSize="24" Foreground="DodgerBlue"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        <Button Background="#0288D1" HorizontalAlignment="Right" Content="Export PDF" Margin="0,138,158,550" />
+        <Button  Margin="0,48,96,0" BorderBrush="{x:Null}" Background="#0288D1" Grid.Row="1" HorizontalAlignment="Right" Content="Export PDF"/>
 
 
-        <TextBlock Text="No Attendance" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="Message_text"/>
+        <TextBlock Grid.Row="2" Text="No Attendance" FontSize="48" Margin="0,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="Message_text"/>
         <DataGrid
+            Grid.Row="2"
             Foreground="#444"
             ItemsSource="{Binding dg_mahasiswa}"
             CanUserAddRows="False"
@@ -48,7 +55,7 @@
             ScrollViewer.CanContentScroll="True"
             ScrollViewer.VerticalScrollBarVisibility="Auto"
             ScrollViewer.HorizontalScrollBarVisibility="Auto"
-            HeadersVisibility="All" HorizontalAlignment="Center" Width="964" Margin="158,207,158,64">
+            HeadersVisibility="All" HorizontalAlignment="Center" Width="Auto" Margin="96,32,96,64">
             <DataGrid.Columns>
                 <DataGridTextColumn Foreground="#444" Binding="{Binding Student.Nrp}" Header="NRP" />
                 <DataGridTextColumn Foreground="#444" Binding="{Binding Student.Name}" Header="Nama" />

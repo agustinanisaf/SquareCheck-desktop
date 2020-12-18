@@ -18,7 +18,15 @@
       Title="ListMahasiswaJurusanPage">
 
     <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <materialDesign:Card Grid.Row="0" VerticalAlignment="Top" Height="82" Width="Auto">
+            <TextBlock x:Name="breadcrumbs" HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Mahasiswa" VerticalAlignment="Top" FontSize="16"/>
+        </materialDesign:Card>
         <DataGrid
+            Grid.Row="1"
             Foreground="#444444"
             ItemsSource="{Binding dg_mahasiswa}"
             CanUserAddRows="False"
@@ -30,62 +38,7 @@
             ScrollViewer.CanContentScroll="True" 
             ScrollViewer.VerticalScrollBarVisibility="Auto"
             ScrollViewer.HorizontalScrollBarVisibility="Auto"
-            HeadersVisibility="All" Margin="54,128,62,56" HorizontalAlignment="Center" Width="964">
-            <!--<DataGrid.Resources>
-                -->
-            <!--<domain:BindingProxy
-      x:Key="DataContextProxy"
-      Data="{Binding}" xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" />-->
-            <!--
-            </DataGrid.Resources>
-            <DataGrid.Columns>
-                <DataGridTextColumn
-      Binding="{Binding Code}"
-      Header="NRP"
-      ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" />
-                -->
-            <!-- if you want to use the pop up style (MaterialDesignDataGridTextColumnPopupEditingStyle), you must use MaterialDataGridTextColumn -->
-            <!--
-                <materialDesign:DataGridTextColumn
-      Header="Nama"
-      ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnPopupEditingStyle}">
-                    <materialDesign:DataGridTextColumn.Binding>
-                        <Binding
-          Path="Nama">
-                            <Binding.ValidationRules>
-                                -->
-            <!--<domain:NotEmptyValidationRule xmlns:domain="clr-namespace:MaterialDesignDemo.Domain" />-->
-            <!--
-                            </Binding.ValidationRules>
-                        </Binding>
-                    </materialDesign:DataGridTextColumn.Binding>
-                </materialDesign:DataGridTextColumn>
-                -->
-            <!-- set a max length to get an indicator in the editor -->
-            <!--
-                <DataGridTextColumn
-      Header="Jurusan"
-      ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
-                    <DataGridTextColumn.Binding>
-                        <Binding
-          Path="Jurusan">
-                        </Binding>
-                    </DataGridTextColumn.Binding>
-                </DataGridTextColumn>
-                <DataGridTextColumn
-      Header="Detail"
-      ElementStyle="{StaticResource MaterialDesignDataGridTextColumnStyle}"
-      EditingElementStyle="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}">
-                    <DataGridTextColumn.Binding>
-                        <Binding
-          Path="Detail">
-                        </Binding>
-                    </DataGridTextColumn.Binding>
-                </DataGridTextColumn>
-            </DataGrid.Columns>-->
+            HeadersVisibility="All" HorizontalAlignment="Center" Margin="96,48,96,64">
             <DataGrid.Columns>
                 <DataGridTextColumn Foreground="#444" Header="NRP" Binding="{Binding Nrp}"/>
                 <DataGridTextColumn Foreground="#444" Header="Name" Binding="{Binding Name}"/>
@@ -96,7 +49,7 @@
                     </DataGridTemplateColumn.Header>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button  Click="Edit_click" Name="btnView">
+                            <Button  Click="Edit_click" Background="White" BorderBrush="{x:Null}" Foreground="#FF0288D1" Name="btnView">
                                 <materialDesign:PackIcon Kind="Eye"/>
                             </Button>
                         </DataTemplate>

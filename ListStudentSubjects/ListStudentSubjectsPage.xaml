@@ -10,18 +10,22 @@
     mc:Ignorable="d" 
     d:DesignHeight="720" d:DesignWidth="1040"
     Title="ListSubjectPage" Background="#FFF3F3F3">
-    <Grid Margin="85,76,65,0">
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Name="StudentsName" Text="Name" Grid.Row="0" Margin="0,0,0,0" FontSize="24" TextElement.FontFamily="Montserrat_Semi"/>
-        <TextBlock Name="StudentsNrp"  Text="Nrp" Grid.Row="1" Margin="0,12,0,0" FontSize="16" TextElement.FontFamily="Montserrat_Regular"/>
-        <ItemsControl Name="icListSubject" Grid.Row="10" Margin="0,32,0,0">
+        <materialDesign:Card Grid.Row="0" VerticalAlignment="Top" Height="82" Width="Auto">
+            <TextBlock HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Mahasiswa" VerticalAlignment="Top" FontSize="16"/>
+        </materialDesign:Card>
+        <TextBlock Name="StudentsName" Text="Name" Grid.Row="1" Margin="96,48,96,0" FontSize="24" TextElement.FontFamily="Montserrat_Semi"/>
+        <TextBlock Name="StudentsNrp"  Text="Nrp" Grid.Row="2" Margin="96,8,96,0" FontSize="16" TextElement.FontFamily="Montserrat_Regular"/>
+        <ItemsControl Name="icListSubject" Grid.Row="3" Margin="0,32,0,64">
             <ItemsControl.ItemContainerStyle>
                 <Style>
                     <Setter Property="FrameworkElement.Margin" Value="0, 0, 0, 26"/>
