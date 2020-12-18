@@ -21,7 +21,7 @@
         <materialDesign:Card Grid.Row="0" VerticalAlignment="Top" Height="82" Width="Auto">
             <TextBlock HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Matakuliah" VerticalAlignment="Top" FontSize="16"/>
         </materialDesign:Card>
-        <ItemsControl Name="icListSubject" Grid.Row="1" Margin="0,0,0,64">
+        <ItemsControl Name="icListSubject" Grid.Row="1" Margin="96,32,96,64">
             <ItemsControl.ItemContainerStyle>
                 <Style>
                     <Setter Property="FrameworkElement.Margin" Value="9"/>
@@ -29,7 +29,7 @@
             </ItemsControl.ItemContainerStyle>
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <UniformGrid Columns="3" Margin="0,32,0,0"/>
+                    <UniformGrid Columns="3"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
@@ -45,6 +45,13 @@
                     </materialDesign:Card>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <ScrollViewer x:Name="ScrollViewer">
+                        <ItemsPresenter />
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ItemsControl.Template>
         </ItemsControl>
     </Grid>
 </basic:MyPage>

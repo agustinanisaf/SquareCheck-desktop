@@ -8,22 +8,32 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
     x:Class="SquareCheck_desktop.SubjectDetail.SubjectDetail"
     mc:Ignorable="d" 
-    d:DesignHeight="720" d:DesignWidth="1040"
+    d:DesignHeight="720" d:DesignWidth="1280"
     Title="Detail Mata Kuliah" Background="#FFF3F3F3">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
-        <materialDesign:Card Grid.Row="0" VerticalAlignment="Top" Height="82" Width="1040">
+        <materialDesign:Card Grid.Row="0" VerticalAlignment="Top" Height="82">
             <TextBlock HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Matakuliah" VerticalAlignment="Top" FontSize="16"/>
         </materialDesign:Card>
-        <TextBlock Name="tbSubject" HorizontalAlignment="Left" Margin="24,100,0,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" FontSize="12" Width="120" />
-        <TextBlock Name="tbClassroom" HorizontalAlignment="Left" Margin="24,150,0,0" TextWrapping="Wrap" Text="{Binding Classroom.Name}" VerticalAlignment="Top" FontSize="12" Width="120" />
-        <TextBlock Name="tbLecturer" HorizontalAlignment="Right" Margin="24,100,24,0" TextWrapping="Wrap" Text="{Binding Lecturer.Name}" VerticalAlignment="Top" FontSize="12" Width="120" />
-        <ItemsControl Name="icSubjectDetail">
+        <Grid Grid.Row="1" Margin="96,32,96,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="*"/>
+                <ColumnDefinition  Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Top" Orientation="Vertical" Grid.Column="0" HorizontalAlignment="Left">
+                <TextBlock Name="tbSubject" TextWrapping="Wrap" Text="{Binding Name}" FontSize="24" Foreground="#444" FontWeight="SemiBold"/>
+                <TextBlock Name="tbClassroom" Margin="0,16,0,0" TextWrapping="Wrap" Text="{Binding Classroom.Name}" FontSize="16" Foreground="#444" FontWeight="Medium"/>
+            </StackPanel>
+            <TextBlock VerticalAlignment="Top" Grid.Column="1" Name="tbLecturer" HorizontalAlignment="Right" TextWrapping="Wrap" Foreground="DodgerBlue" Text="{Binding Lecturer.Name}" FontSize="18"/>
+        </Grid>
+        <ItemsControl Name="icSubjectDetail" Grid.Row="2" Margin="96,16,96,64">
             <ItemsControl.ItemContainerStyle>
                 <Style>
                     <Setter Property="FrameworkElement.Margin" Value="9"/>
@@ -31,7 +41,7 @@
             </ItemsControl.ItemContainerStyle>
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <UniformGrid Columns="3" Margin="0,180,0,0"/>
+                    <UniformGrid Columns="3" Margin="0,32,0,0"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
@@ -40,12 +50,19 @@
                         <materialDesign:Card.InputBindings>
                             <MouseBinding MouseAction="LeftClick" Command="{Binding SubjectDetailCommand}" CommandParameter="{Binding Schedule}"/>
                         </materialDesign:Card.InputBindings>
-                        <Grid HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="273">
-                            <TextBlock Name="tbTime" HorizontalAlignment="Left" Margin="24,16,0,0" TextWrapping="Wrap" Text="{Binding Schedule.Time}" VerticalAlignment="Top" FontSize="16" Width="120" />
+                        <Grid HorizontalAlignment="Left" VerticalAlignment="Center" Width="273">
+                            <TextBlock Name="tbTime" HorizontalAlignment="Left" Margin="24,0,0,0" TextWrapping="Wrap" Text="{Binding Schedule.Time}" FontSize="16" Width="120" />
                         </Grid>
                     </materialDesign:Card>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <ScrollViewer x:Name="ScrollViewer">
+                        <ItemsPresenter />
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ItemsControl.Template>
         </ItemsControl>
     </Grid>
 </basic1:MyPage>

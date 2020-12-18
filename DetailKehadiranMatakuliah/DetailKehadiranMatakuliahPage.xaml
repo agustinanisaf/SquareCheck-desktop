@@ -31,10 +31,10 @@
         </materialDesign:Card>
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <StackPanel Orientation="Vertical" VerticalAlignment="Center"  Margin="96,48,0,0">
-                <TextBlock FontWeight="Medium" FontSize="32" x:Name="Subject" Text="subject"/>
+                <TextBlock FontWeight="Medium" FontSize="24" x:Name="Subject" Text="subject"/>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="class" x:Name="ClassSlug" FontSize="24" Margin="0 8"/>
-                    <TextBlock Text=" - time" x:Name="DateSchedule" Margin="10 8" FontSize="24" Foreground="DodgerBlue"/>
+                    <TextBlock Text="class" x:Name="ClassSlug" FontSize="16" Margin="0 8"/>
+                    <TextBlock Text=" - time" x:Name="DateSchedule" Margin="10 8" FontSize="16" Foreground="DodgerBlue"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

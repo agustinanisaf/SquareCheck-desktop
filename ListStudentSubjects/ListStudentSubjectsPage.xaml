@@ -25,7 +25,7 @@
         </materialDesign:Card>
         <TextBlock Name="StudentsName" Text="Name" Grid.Row="1" Margin="96,48,96,0" FontSize="24" TextElement.FontFamily="Montserrat_Semi"/>
         <TextBlock Name="StudentsNrp"  Text="Nrp" Grid.Row="2" Margin="96,8,96,0" FontSize="16" TextElement.FontFamily="Montserrat_Regular"/>
-        <ItemsControl Name="icListSubject" Grid.Row="3" Margin="0,32,0,64">
+        <ItemsControl Name="icListSubject" Grid.Row="3" Margin="96,32,96,64">
             <ItemsControl.ItemContainerStyle>
                 <Style>
                     <Setter Property="FrameworkElement.Margin" Value="0, 0, 0, 26"/>
@@ -51,6 +51,13 @@
                     </materialDesign:Card>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <ScrollViewer x:Name="ScrollViewer">
+                        <ItemsPresenter />
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ItemsControl.Template>
         </ItemsControl>
     </Grid>
 </basic1:MyPage>

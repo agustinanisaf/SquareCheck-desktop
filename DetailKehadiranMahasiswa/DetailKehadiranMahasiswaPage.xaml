@@ -93,12 +93,14 @@
       Width="Auto" Margin="96,32,96,64">
             <DataGrid.Columns>
                 <DataGridTextColumn Foreground="#444"
-                            Binding="{Binding Schedule.Time}"
+                            Binding="{Binding Time}"
+                            FontSize="16"
                             Header="Tanggal"/>
                 <DataGridTextColumn Foreground="#444"
-                            Binding="{Binding Schedule.Attendace.Time}"
+                            Binding="{Binding Attendace.Time}"
+                            FontSize="16"
                             Header="Waktu" />
-                <DataGridTextColumn Foreground="#444" Binding="{Binding Schedule.Attendance.Status}" Header="Status"/>
+                <DataGridTextColumn Foreground="#444" Binding="{Binding Attendance.Status}" FontSize="16" Header="Status"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
