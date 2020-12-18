@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SquareCheck_desktop.Login"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
         TextElement.FontWeight="Regular"
         xmlns:basic="clr-namespace:Velacro.UIElements.Basic;assembly=Velacro"
         TextElement.FontSize="14"
@@ -16,8 +17,20 @@
         mc:Ignorable="d"
         Title="Login" Height="720" Width="1280">
     <Grid>
-        <Grid HorizontalAlignment="Left" Width="400">
-            <StackPanel VerticalAlignment="Center" Margin="50 0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100">
+                <svgc:SvgViewbox Source="/Resources/checks logo.svg" Height="30"/>
+                <svgc:SvgViewbox Source="/Resources/Square Checks - type logo.svg" Height="30"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Center" Grid.Row="1" Margin="48,0,48,64">
                 <TextBlock Text="Selamat Datang" FontSize="32" FontWeight="Bold" Foreground="#FF01579B"/>
                 <TextBox Margin="0 32 0 0" x:Name="email_tf"
   materialDesign:HintAssist.Hint="Email"
@@ -33,11 +46,12 @@
   Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
                 <Button Margin="0 24 0 0" Click="login_btn_Click"
   Style="{StaticResource MaterialDesignRaisedButton}"
-  ToolTip="Resource name: MaterialDesignRaisedButton"
-  Content="LOGIN" x:Name="login_btn" Background="DodgerBlue" />
+                        Foreground="White"
+  ToolTip="Resource name: MaterialDesignRaisedButton" BorderBrush="{x:Null}"
+  Content="LOGIN" x:Name="login_btn" Background="#FF0288D1" />
             </StackPanel>
         </Grid>
-        <Grid HorizontalAlignment="Right" Width="880" Background="#FF0288D1">
+        <Grid Grid.Column="1" Background="#FF0288D1">
             <StackPanel VerticalAlignment="Center" Margin="150 0">
                 <TextBlock Text="Absen Tanpa Ribet" FontWeight="Black" Width="350" HorizontalAlignment="Left" FontSize="58" TextWrapping="Wrap" Foreground="White"/>
                 <TextBlock LineHeight="34" FontWeight="Medium" FontSize="24" Margin="0 24" Text="Ingin aplikasi absensi yang mudah dan cepat? Square Checks solusi untuk Anda dengan fitur One-Click absen dan reminder ketika presensi kelas sudah dibuka serta dilengkapi dengan rekap absensi yang dapat diekspor ke PDF." Height="180" TextWrapping="Wrap" Foreground="White"/>

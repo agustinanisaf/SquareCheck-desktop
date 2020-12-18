@@ -1,4 +1,4 @@
-﻿﻿using SquareCheck_desktop.ListStudentSubjects;
+﻿using SquareCheck_desktop.ListStudentSubjects;
 using SquareCheck_desktop.Model;
 using System;
 using System.Collections;
