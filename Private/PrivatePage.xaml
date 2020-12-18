@@ -26,8 +26,8 @@
             <ListView Height="auto" Foreground="White">
                 <ListViewItem VerticalAlignment="Center" Height="50" HorizontalAlignment="Center">
                     <StackPanel Orientation="Horizontal">
-                        <svgc:SvgViewbox Source="/Resources/checks logo - white.svg" Height="15"/>
-                        <svgc:SvgViewbox Source="/Resources/Square Checks White - type logo.svg" Height="15" Margin="5,0,0,0"/>
+                        <svgc:SvgViewbox Source="../Resources/ChecksLogoWhite.svg" Height="15"/>
+                        <svgc:SvgViewbox Source="../Resources/TypeLogoWhite.svg" Height="15" Margin="5,0,0,0"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Padding="25">

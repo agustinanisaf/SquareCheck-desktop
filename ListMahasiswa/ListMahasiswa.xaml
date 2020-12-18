@@ -13,6 +13,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="*"/>
@@ -20,7 +21,7 @@
         <materialDesign:Card Grid.Row="0" VerticalAlignment="Top" Height="82" Width="Auto">
             <TextBlock HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Mahasiswa" VerticalAlignment="Top" FontSize="16"/>
         </materialDesign:Card>
-        <ItemsControl Name="icListMahasiswa">
+        <ItemsControl Name="icListMahasiswa" Grid.Row="1" Margin="96,32,96,64">
             <ItemsControl.ItemContainerStyle>
                 <Style>
                     <Setter Property="FrameworkElement.Margin" Value="9"/>
@@ -28,7 +29,7 @@
             </ItemsControl.ItemContainerStyle>
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <UniformGrid Columns="3" Margin="0,180,0,0"/>
+                    <UniformGrid Columns="3"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
@@ -37,13 +38,20 @@
                         <materialDesign:Card.InputBindings>
                             <MouseBinding MouseAction="LeftClick" Command="{Binding ListMahasiswaCommand}" CommandParameter="{Binding DepartmentSummary.Id}"/>
                         </materialDesign:Card.InputBindings>
-                        <Grid HorizontalAlignment="Left" Height="133" VerticalAlignment="Top" Width="273">
+                        <Grid HorizontalAlignment="Left" Width="273">
                             <TextBlock Name="tbMahasiswa" HorizontalAlignment="Left" Margin="24,16,0,0" TextWrapping="Wrap" Text="{Binding DepartmentSummary.Name}" VerticalAlignment="Top" FontSize="16" Width="120" />
                             <TextBlock Name="tbMahasiswaTotal" HorizontalAlignment="Right" Margin="0,0,24,16" TextWrapping="Wrap" Text="{Binding DepartmentSummary.Count}" VerticalAlignment="Bottom" FontSize="48" />
                         </Grid>
                     </materialDesign:Card>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
+            <ItemsControl.Template>
+                <ControlTemplate>
+                    <ScrollViewer x:Name="ScrollViewer">
+                        <ItemsPresenter />
+                    </ScrollViewer>
+                </ControlTemplate>
+            </ItemsControl.Template>
         </ItemsControl>
     </Grid>
 </basic:MyPage>

@@ -37,7 +37,7 @@ namespace SquareCheck_desktop.DetailKehadiranMahasiswa
                     if (key.Subject.Id.Equals(subjectId))
                         finalRes.Add(key);
                 }
-
+                Console.WriteLine(_response.getJObject());
                 getView().callMethod("showListDetailKehadiranMahasiswa", finalRes);
             }
         }

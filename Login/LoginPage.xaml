@@ -27,8 +27,8 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100">
-                <svgc:SvgViewbox Source="/Resources/checks logo.svg" Height="30"/>
-                <svgc:SvgViewbox Source="/Resources/Square Checks - type logo.svg" Height="30"/>
+                <Image Source="{svgc:SvgImage ../ChecksLogo.svg}" Height="30"/>
+                <Image Source="{svgc:SvgImage ../TypeLogo.svg}" Height="30" Margin="7,0,0,0"/>
             </StackPanel>
             <StackPanel VerticalAlignment="Center" Grid.Row="1" Margin="48,0,48,64">
                 <TextBlock Text="Selamat Datang" FontSize="32" FontWeight="Bold" Foreground="#FF01579B"/>

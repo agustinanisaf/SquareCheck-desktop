@@ -47,7 +47,6 @@ namespace SquareCheck_desktop.ListMahasiswaJurusan
                 StudentModel dataRowView = (StudentModel)((Button)e.Source).DataContext;
                 String NRP = dataRowView.Nrp;
                 String Name = dataRowView.Name;
-                MessageBox.Show("You Clicked : " + NRP + "\r\nName : " + Name);
                 //This is the code which will show the button click row data. Thank you.
 
                 // Navigate to Next Page
