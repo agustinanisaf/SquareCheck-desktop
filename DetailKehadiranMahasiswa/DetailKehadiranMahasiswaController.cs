@@ -31,11 +31,18 @@ namespace SquareCheck_desktop.DetailKehadiranMahasiswa
             {
                 res = new List<ScheduleModel>(_response.getParsedObject<APIResponse<List<ScheduleModel>>>().Data);
                 finalRes = new List<ScheduleModel>();
+                DateTime date;
 
                 foreach (var key in res)
                 {
                     if (key.Subject.Id.Equals(subjectId))
+                    {
+                        date = Convert.ToDateTime(key.Time);
+                        key.Time = date.ToString("dd MMM yyyy");
+                        date = Convert.ToDateTime(key.Attendance.Time);
+                        key.Attendance.Time = date.ToString("HH:mm");
                         finalRes.Add(key);
+                    }
                 }
                 Console.WriteLine(_response.getJObject());
                 getView().callMethod("showListDetailKehadiranMahasiswa", finalRes);

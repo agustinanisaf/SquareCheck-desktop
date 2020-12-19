@@ -23,9 +23,18 @@ namespace SquareCheck_desktop.DetailKehadiranMatakuliah
 
         private void viewListMahasiswaController(HttpResponseBundle obj)
         {
-            Console.WriteLine("Res : " + obj);
+            List<AttendanceModel> model = obj.getParsedObject<APIResponse<List<AttendanceModel>>>().Data;
+            List<AttendanceModel> result = new List<AttendanceModel>();
+            DateTime date;
 
-            getView().callMethod("showListMahasiswa", obj.getParsedObject<APIResponse<List<AttendanceModel>>>().Data);
+            foreach (var key in model)
+            {
+                date = Convert.ToDateTime(key.Time);
+                key.Time = date.ToString("HH:mm");
+                result.Add(key);
+            }
+
+            getView().callMethod("showListMahasiswa", result);
 
         }
     }

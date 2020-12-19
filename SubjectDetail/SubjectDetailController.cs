@@ -32,8 +32,17 @@ namespace SquareCheck_desktop.SubjectDetail
         {
             if (_response.getHttpResponseMessage().Content != null)
             {
-                string status = _response.getHttpResponseMessage().ReasonPhrase;
-                getView().callMethod("showSubjectDetail", _response.getParsedObject<APIResponse<List<ScheduleModel>>>().Data);
+                List<ScheduleModel> model = _response.getParsedObject<APIResponse<List<ScheduleModel>>>().Data;
+                List<ScheduleModel> result = new List<ScheduleModel>();
+                DateTime date;
+
+                foreach (var key in model)
+                {
+                    date = Convert.ToDateTime(key.Time);
+                    key.Time = date.ToString("dddd, dd MMM yyyy");
+                    result.Add(key);
+                }
+                getView().callMethod("showSubjectDetail", result);
             }
         }
     }

@@ -32,7 +32,7 @@
             <TextBlock HorizontalAlignment="Left" Margin="32,0,0,0" TextWrapping="Wrap" Text="Home" VerticalAlignment="Center" FontSize="16"/>
         </materialDesign:Card>
         <Image Grid.Row="1" Source="/Dashboard/Banner.png" Margin="87,32" Height="170"/>
-        <TextBlock Grid.Row="2" Margin="96,0,0,0" FontWeight="SemiBold" FontSize="18">Mahasiswa</TextBlock>
+        <TextBlock Grid.Row="2" Margin="96,0,0,0" FontWeight="Medium" FontSize="18">Mahasiswa</TextBlock>
         <TextBlock Grid.Row="2" HorizontalAlignment="Right" Margin="0,0,96,0" FontSize="14" Foreground="#FF0288D1" MouseLeftButtonDown="StudentButton_Click">See More</TextBlock>
         <ItemsControl Grid.Row="3" Name="icStudent" Margin="96,0">
             <ItemsControl.ItemContainerStyle>
@@ -59,7 +59,7 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        <TextBlock Grid.Row="4" Margin="96,16,0,0" FontWeight="SemiBold" FontSize="18">Matakuliah</TextBlock>
+        <TextBlock Grid.Row="4" Margin="96,16,0,0" FontWeight="Medium" FontSize="18">Matakuliah</TextBlock>
         <TextBlock Grid.Row="4" HorizontalAlignment="Right" Margin="0,16,96,0" Foreground="#FF0288D1"  FontSize="14" MouseLeftButtonDown="SubjectButton_Click">See More</TextBlock>
         <ItemsControl Grid.Row="5" Name="icSubjects" Margin="96,0">
             <ItemsControl.ItemContainerStyle>
