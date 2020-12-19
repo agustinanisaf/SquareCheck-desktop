@@ -37,7 +37,8 @@ namespace SquareCheck_desktop.SubjectDetail
 
         public void GoToDetailKehadiranMatakuliah(ScheduleModel schedule)
         {
-            this.Dispatcher.Invoke(() => {
+            this.Dispatcher.Invoke(() =>
+            {
                 this.NavigationService.Navigate(new DetailKehadiranMatakuliahPage(schedule));
             });
         }
