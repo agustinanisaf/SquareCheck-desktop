@@ -31,10 +31,11 @@ namespace SquareCheck_desktop.ListMahasiswa
             });
         }
 
-        public void GoToListMahasiswaJurusan(int jurusanId)
+        public void GoToListMahasiswaJurusan(DepartmentSummaryModel jurusan)
         {
-            this.Dispatcher.Invoke(() => {
-                NavigationService.Navigate(new ListMahasiswaJurusanPage(jurusanId));
+            this.Dispatcher.Invoke(() =>
+            {
+                NavigationService.Navigate(new ListMahasiswaJurusanPage(jurusan));
             });
         }
     }

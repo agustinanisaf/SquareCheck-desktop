@@ -15,7 +15,7 @@ namespace SquareCheck_desktop.ListMahasiswa
             get { return _command; }
         }
 
-        public static List<ListMahasiswaContext> FromDepartmentSummary(List<DepartmentSummaryModel> departmentSummaries, Action<int> goToListMahasiswaJurusan)
+        public static List<ListMahasiswaContext> FromDepartmentSummary(List<DepartmentSummaryModel> departmentSummaries, Action<DepartmentSummaryModel> goToListMahasiswaJurusan)
         {
             var list = new List<ListMahasiswaContext>();
             foreach (var summary in departmentSummaries)
@@ -32,9 +32,9 @@ namespace SquareCheck_desktop.ListMahasiswa
     public class ListMahasiswaCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
-        Action<int> goToListMahasiswaJurusan;
+        Action<DepartmentSummaryModel> goToListMahasiswaJurusan;
 
-        public ListMahasiswaCommand(Action<int> goToListMahasiswaJurusan)
+        public ListMahasiswaCommand(Action<DepartmentSummaryModel> goToListMahasiswaJurusan)
         {
             this.goToListMahasiswaJurusan = goToListMahasiswaJurusan;
         }
@@ -48,7 +48,7 @@ namespace SquareCheck_desktop.ListMahasiswa
         {
             // Change to Other Page
             Console.WriteLine("Go to List MahasiswaJurusan with jurusanId: " + parameter);
-            goToListMahasiswaJurusan((int)parameter);
+            goToListMahasiswaJurusan((DepartmentSummaryModel)parameter);
         }
     }
 }

@@ -14,6 +14,7 @@ namespace SquareCheck_desktop.ListStudentSubjects
         private StudentModel student;
         public ListStudentSubjectsPage(StudentModel student)
         {
+            InitializeComponent();
             this.KeepAlive = true;
             this.student = student;
             setController(new ListStudentSubjectsController(this, student));
@@ -23,6 +24,9 @@ namespace SquareCheck_desktop.ListStudentSubjects
         private void initUIElements()
         {
             getController().callMethod("getListSubject");
+            breadcrumbs.Text += " / " + student.Department.Name + " / " + student.Nrp;
+            StudentsName.Text = student.Name;
+            StudentsNrp.Text = student.Nrp;
         }
 
         public void showListSubject(List<SubjectModel> items)
@@ -31,23 +35,6 @@ namespace SquareCheck_desktop.ListStudentSubjects
             {
                 icListSubject.ItemsSource = ListStudentSubjectsContext.FromSubjectModel(items, student, GoToListKehadiranMahasiswa);
             });
-        }
-
-        public void showStudentProfile(StudentModel student)
-        {
-            this.Dispatcher.Invoke(() =>
-            {
-                StudentsName.Text = student.Name;
-                StudentsNrp.Text = student.Nrp;
-
-            });
-        }
-
-        protected override void OnInitialized(EventArgs e)
-        {
-            base.OnInitialized(e);
-            InitializeComponent();
-            getController().callMethod("viewShowStudentsProfile");
         }
 
         public void GoToListKehadiranMahasiswa(StudentSubjectModel subject)

@@ -19,7 +19,7 @@
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
         <materialDesign:Card Grid.Row="0" VerticalAlignment="Top" Height="82" Width="Auto">
-            <TextBlock HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Matakuliah" VerticalAlignment="Top" FontSize="16"/>
+            <TextBlock HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Matakuliah" VerticalAlignment="Top" x:Name="breadcrumbs" FontSize="16"/>
         </materialDesign:Card>
         <materialDesign:Card Height="350" Width="350" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1">
             <Grid>

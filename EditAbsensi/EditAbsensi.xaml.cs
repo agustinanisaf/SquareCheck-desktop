@@ -60,6 +60,7 @@ namespace SquareCheck_desktop.EditAbsensi
 
         private void initUIElements()
         {
+            breadcrumbs.Text += schedule.Subject.Name + " / " + schedule.Subject.Classroom.Slug + " / " + attendance.Time + " / " + attendance.Student.Nrp;
             mhsTxtBox = txtBoxBuilder.activate(this, "textBoxMahasiswa");
             jadwalTxtBox = txtBoxBuilder.activate(this, "textBoxJadwal");
             tglTxtBox = txtBoxBuilder.activate(this, "textBoxTanggal");
@@ -73,7 +74,7 @@ namespace SquareCheck_desktop.EditAbsensi
 
         private int GetStatus(string status)
         {
-            switch(status)
+            switch (status)
             {
                 case "hadir":
                     return 0;
@@ -93,7 +94,8 @@ namespace SquareCheck_desktop.EditAbsensi
 
         public void showUpdateSuccess()
         {
-            this.Dispatcher.Invoke(() => {
+            this.Dispatcher.Invoke(() =>
+            {
                 this.NavigationService.GoBack();
                 this.NavigationService.RemoveBackEntry();
             });

@@ -22,7 +22,7 @@ namespace SquareCheck_desktop.ListSubjectofDepartment
 
         private void initUIElements()
         {
-            DepartmentName.Text = department.Name;
+            breadcrumbs.Text += " / " + department.Name;
             getController().callMethod("getListSubjectofDepartment", department.Id);
         }
 
@@ -36,7 +36,8 @@ namespace SquareCheck_desktop.ListSubjectofDepartment
 
         public void GoToSubjectDetail(SubjectModel subject)
         {
-            this.Dispatcher.Invoke(() => {
+            this.Dispatcher.Invoke(() =>
+            {
                 this.NavigationService.Navigate(new SubjectDetail.SubjectDetail(subject));
             });
         }

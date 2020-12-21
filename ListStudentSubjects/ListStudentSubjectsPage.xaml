@@ -21,7 +21,7 @@
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
         <materialDesign:Card Grid.Row="0" VerticalAlignment="Top" Height="82" Width="Auto">
-            <TextBlock HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Mahasiswa" VerticalAlignment="Top" FontSize="16"/>
+            <TextBlock x:Name="breadcrumbs" HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Mahasiswa" VerticalAlignment="Top" FontSize="16"/>
         </materialDesign:Card>
         <TextBlock Name="StudentsName" Text="Name" Grid.Row="1" Margin="96,48,96,0" FontSize="24" TextElement.FontFamily="Montserrat_Semi"/>
         <TextBlock Name="StudentsNrp"  Text="Nrp" Grid.Row="2" Margin="96,8,96,0" FontSize="16" TextElement.FontFamily="Montserrat_Regular"/>
