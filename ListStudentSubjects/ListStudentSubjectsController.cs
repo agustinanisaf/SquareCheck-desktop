@@ -37,10 +37,5 @@ namespace SquareCheck_desktop.ListStudentSubjects
                 getView().callMethod("showListSubject", dataSubject);
             }
         }
-
-        public void viewShowStudentsProfile()
-        {
-            getView().callMethod("showStudentProfile", Student);
-        }
     }
 }

@@ -25,11 +25,12 @@ namespace SquareCheck_desktop.ListMahasiswaJurusan
     /// </summary>
     public partial class ListMahasiswaJurusanPage : MyPage
     {
-        public ListMahasiswaJurusanPage(int jurusanId)
+        public ListMahasiswaJurusanPage(DepartmentSummaryModel jurusan)
         {
             InitializeComponent();
             setController(new ListMahasiswaJurusanController(this));
-            getController().callMethod("getData", jurusanId);
+            getController().callMethod("getData", jurusan.Id);
+            breadcrumbs.Text += " / " + jurusan.Name;
         }
 
         public void showListMahasiswa(List<StudentModel> model)

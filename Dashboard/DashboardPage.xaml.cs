@@ -49,11 +49,11 @@ namespace SquareCheck_desktop.Dashboard
             });
         }
 
-        public void GoToListStudent(int departmentId)
+        public void GoToListStudent(DepartmentSummaryModel department)
         {
             this.Dispatcher.Invoke(() =>
             {
-                this.NavigationService.Navigate(new ListMahasiswaJurusanPage(departmentId));
+                this.NavigationService.Navigate(new ListMahasiswaJurusanPage(department));
             });
         }
 

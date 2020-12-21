@@ -24,6 +24,7 @@ namespace SquareCheck_desktop.SubjectDetail
         private void initUIElements()
         {
             DataContext = subject;
+            breadcrumbs.Text += "/" + subject.Name;
             getController().callMethod("getSubjectDetail", subject.Id);
         }
 

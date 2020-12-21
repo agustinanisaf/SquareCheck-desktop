@@ -20,10 +20,8 @@
             <ColumnDefinition  Width="*"/>
         </Grid.ColumnDefinitions>
         <materialDesign:Card Grid.Row="0" VerticalAlignment="Top" Height="82" Width="Auto">
-            <Grid HorizontalAlignment="Left">
-                <TextBlock HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Mata Kuliah" VerticalAlignment="Top" FontSize="16" Width="120"/>
-                <TextBlock HorizontalAlignment="Left" Margin="124,32,0,0" TextWrapping="Wrap" Text="/" VerticalAlignment="Top" FontSize="16" Width="120" />
-                <TextBlock Name="DepartmentName" HorizontalAlignment="Left" Margin="136,32,0,28" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="16"/>
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Center"  Margin="32,0,32,0">
+                <TextBlock Text="Matakuliah" x:Name="breadcrumbs" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="16"/>
             </Grid>
             <!--<TextBlock Name="matakuliah" HorizontalAlignment="Left" Margin="32,32,0,0" TextWrapping="Wrap" Text="Matakuliah" VerticalAlignment="Top" FontSize="16"/>-->
         </materialDesign:Card>
