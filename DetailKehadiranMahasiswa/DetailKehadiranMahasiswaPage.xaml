@@ -97,7 +97,7 @@
                             FontSize="16"
                             Header="Tanggal"/>
                 <DataGridTextColumn Foreground="#444"
-                            Binding="{Binding Attendace.Time}"
+                            Binding="{Binding Attendance.Time}"
                             FontSize="16"
                             Header="Waktu" />
                 <DataGridTextColumn Foreground="#444" Binding="{Binding Attendance.Status}" FontSize="16" Header="Status"/>

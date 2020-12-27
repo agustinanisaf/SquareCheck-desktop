@@ -16,15 +16,15 @@ namespace SquareCheck_desktop.Private
             InitializeComponent();
             this.KeepAlive = true;
             setController(new PrivatePageController(this));
-            getController().callMethod("getUserData");
             subPage.Navigate(new DashboardPage());
+            getController().callMethod("getUserData");
         }
 
         private void logout_selected(object sender, RoutedEventArgs e)
         {
             this.Dispatcher.Invoke(() =>
             {
-                this.NavigationService.GoBack();
+                this.NavigationService.Navigate(new Login.LoginPage());
                 this.NavigationService.RemoveBackEntry();
             });
         }

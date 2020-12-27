@@ -23,8 +23,15 @@ namespace SquareCheck_desktop.Private
 
         private void viewPrivateInfo(HttpResponseBundle obj)
         {
-            Console.WriteLine("User : " + obj);
-            getView().callMethod("showInfoUser", obj.getParsedObject<APIResponse<UserModel>>().Data);
+            if (obj.getHttpResponseMessage().Content != null)
+            {
+                Console.WriteLine("\n\n\nUser : " + obj.getParsedObject<APIResponse<UserModel>>().Data.Email + "\n\n\n");
+                getView().callMethod("showInfoUser", obj.getParsedObject<APIResponse<UserModel>>().Data);
+            }
+            else
+            {
+                Console.WriteLine("Cannot get user");
+            }
         }
     }
 }

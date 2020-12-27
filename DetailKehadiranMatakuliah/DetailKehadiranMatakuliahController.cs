@@ -31,6 +31,9 @@ namespace SquareCheck_desktop.DetailKehadiranMatakuliah
             {
                 date = Convert.ToDateTime(key.Time);
                 key.Time = date.ToString("HH:mm");
+                if (key.Status == "alpa")
+                    key.color = "#DB504A";
+                else key.color = "#444";
                 result.Add(key);
             }
 

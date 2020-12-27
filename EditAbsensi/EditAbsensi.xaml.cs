@@ -60,14 +60,14 @@ namespace SquareCheck_desktop.EditAbsensi
 
         private void initUIElements()
         {
-            breadcrumbs.Text += schedule.Subject.Name + " / " + schedule.Subject.Classroom.Slug + " / " + attendance.Time + " / " + attendance.Student.Nrp;
+            breadcrumbs.Text += schedule.Subject.Name + " / " + schedule.Subject.Classroom.Slug + " / " + schedule.Time + " / " + attendance.Student.Nrp;
             mhsTxtBox = txtBoxBuilder.activate(this, "textBoxMahasiswa");
             jadwalTxtBox = txtBoxBuilder.activate(this, "textBoxJadwal");
             tglTxtBox = txtBoxBuilder.activate(this, "textBoxTanggal");
             statusCmbBox = cmbBoxBuilder.activate(this, "comboBoxStatus");
             mhsTxtBox.setText(attendance.Student.Nrp + " - " + attendance.Student.Name);
-            jadwalTxtBox.setText(schedule.Subject.Id + " - " + schedule.Subject.Name);
-            tglTxtBox.setText(schedule.Id + " - " + schedule.Time);
+            jadwalTxtBox.setText(schedule.Subject.Name);
+            tglTxtBox.setText(schedule.Time);
             statusCmbBox.setSelectedItemIndex(GetStatus(attendance.Status));
             statusCmbBox.addOnSelectionChanged(this, "ChangeAttendanceStatus");
         }
@@ -99,6 +99,12 @@ namespace SquareCheck_desktop.EditAbsensi
                 this.NavigationService.GoBack();
                 this.NavigationService.RemoveBackEntry();
             });
+        }
+
+        public void backButton_clicked(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+            this.NavigationService.RemoveBackEntry();
         }
 
         public void ChangeAttendanceStatus(object sender)
