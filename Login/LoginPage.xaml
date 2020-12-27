@@ -27,8 +27,8 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100">
-                <Image Source="{svgc:SvgImage ../ChecksLogo.svg}" Height="30"/>
-                <Image Source="{svgc:SvgImage ../TypeLogo.svg}" Height="30" Margin="7,0,0,0"/>
+                <Image Source="Logo.png" Height="30"/>
+                <Image Source="TypeLogo.png" Height="30" Margin="5,0,0,0"/>
             </StackPanel>
             <StackPanel VerticalAlignment="Center" Grid.Row="1" Margin="48,0,48,64">
                 <TextBlock Text="Selamat Datang" FontSize="32" FontWeight="Bold" Foreground="#FF01579B"/>
@@ -57,6 +57,16 @@
                 <TextBlock LineHeight="34" FontWeight="Medium" FontSize="24" Margin="0 24" Text="Ingin aplikasi absensi yang mudah dan cepat? Square Checks solusi untuk Anda dengan fitur One-Click absen dan reminder ketika presensi kelas sudah dibuka serta dilengkapi dengan rekap absensi yang dapat diekspor ke PDF." Height="180" TextWrapping="Wrap" Foreground="White"/>
             </StackPanel>
         </Grid>
+        <Image Source="illus.png" Grid.Column="1" Margin="662,402,-44,-154" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-15"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
     </Grid>
 
 </basic:MyPage>

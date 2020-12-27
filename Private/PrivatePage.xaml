@@ -25,9 +25,9 @@
         <StackPanel Grid.Column="0" Background="#01579B">
             <ListView Height="auto" Foreground="White">
                 <ListViewItem VerticalAlignment="Center" Height="50" HorizontalAlignment="Center">
-                    <StackPanel Orientation="Horizontal">
-                        <svgc:SvgViewbox Source="../Resources/ChecksLogoWhite.svg" Height="15"/>
-                        <svgc:SvgViewbox Source="../Resources/TypeLogoWhite.svg" Height="15" Margin="5,0,0,0"/>
+                    <StackPanel Orientation="Horizontal" Height="15">
+                        <Image Source="Logo.png"/>
+                        <Image Source="TypeLogo.png" Margin="5,0,0,0"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Padding="25">
@@ -40,8 +40,8 @@
                             </materialDesign:PackIcon.RenderTransform>
                         </materialDesign:PackIcon>
                         <StackPanel Orientation="Vertical" Margin="20,0,0,0">
-                            <TextBlock Text="Darto" x:Name="username" FontSize="15"/>
-                            <TextBlock Text="Admin" FontSize="10" Width="70" TextWrapping="Wrap"/>
+                            <TextBlock Text="Admin" TextWrapping="Wrap" x:Name="username" FontSize="15"/>
+                            <TextBlock Text="" FontSize="10" Width="70" TextWrapping="Wrap"/>
                         </StackPanel>
                     </StackPanel>
                 </ListViewItem>

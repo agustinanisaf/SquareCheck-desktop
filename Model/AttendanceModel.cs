@@ -5,5 +5,6 @@
         public StudentModel Student { get; set; }
         public string Time { get; set; }
         public string Status { get; set; }
+        public string color { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Navigation;
 using Velacro.UIElements.Basic;
 
 namespace SquareCheck_desktop.DetailKehadiranMatakuliah
@@ -18,13 +19,14 @@ namespace SquareCheck_desktop.DetailKehadiranMatakuliah
         {
             InitializeComponent();
             setController(new DetailKehadiranMatakuliahController(this));
-            getController().callMethod("getData", schedule.Id);
             this.schedule = schedule;
             ClassSlug.Text = schedule.Subject.Classroom.Slug;
             Subject.Text = schedule.Subject.Name;
             DateSchedule.Text = schedule.Time.ToString();
             Breadcrumbs.Text += " / " + schedule.Subject.Name + " / " + schedule.Subject.Classroom.Slug + " / " + schedule.Time.ToString();
         }
+
+
 
         public void showListMahasiswa(List<AttendanceModel> model)
         {
@@ -46,6 +48,11 @@ namespace SquareCheck_desktop.DetailKehadiranMatakuliah
         {
             AttendanceModel row = (AttendanceModel)((Button)e.Source).DataContext;
             this.NavigationService.Navigate(new EditAbsensi.EditAbsensi(this.schedule, row));
+        }
+
+        private void MyPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            getController().callMethod("getData", schedule.Id);
         }
     }
 }

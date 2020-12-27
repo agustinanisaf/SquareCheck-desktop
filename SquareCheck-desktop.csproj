@@ -280,7 +280,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Login\ChecksLogo.svg" />
+    <Resource Include="Login\Logo.png" />
+    <Resource Include="Login\TypeLogo.png" />
+    <Resource Include="Login\illus.png" />
     <Content Include="Login\TypeLogo.svg" />
+    <Resource Include="Private\Logo.png" />
+    <Resource Include="Private\TypeLogo.png" />
     <Content Include="Resources\calendar.svg" />
     <Content Include="Resources\ChecksLogoWhite.svg" />
     <Content Include="Resources\ChecksLogo.svg" />
