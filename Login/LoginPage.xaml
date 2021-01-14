@@ -19,7 +19,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="400"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="880"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0">
             <Grid.RowDefinitions>
@@ -51,22 +51,213 @@
   Content="LOGIN" x:Name="login_btn" Background="#FF0288D1" />
             </StackPanel>
         </Grid>
-        <Grid Grid.Column="1" Background="#FF0288D1">
-            <StackPanel VerticalAlignment="Center" Margin="150 0">
-                <TextBlock Text="Absen Tanpa Ribet" FontWeight="Black" Width="350" HorizontalAlignment="Left" FontSize="58" TextWrapping="Wrap" Foreground="White"/>
-                <TextBlock LineHeight="34" FontWeight="Medium" FontSize="24" Margin="0 24" Text="Ingin aplikasi absensi yang mudah dan cepat? Square Checks solusi untuk Anda dengan fitur One-Click absen dan reminder ketika presensi kelas sudah dibuka serta dilengkapi dengan rekap absensi yang dapat diekspor ke PDF." Height="180" TextWrapping="Wrap" Foreground="White"/>
-            </StackPanel>
+        <Grid Grid.Column="1">
+            <ScrollViewer Height = "720" Width="850" VerticalScrollBarVisibility = "Visible">
+                <StackPanel HorizontalAlignment="Left">
+                    <StackPanel Background="#FF0288D1" Width="Auto" Height="715">
+                        <TextBlock Text="Absen Tanpa Ribet" FontWeight="Black" Width="350" 
+                                   HorizontalAlignment="Left" FontSize="58" TextWrapping="Wrap" 
+                                   Foreground="White" Margin="164,243,0,0"/>
+                        <TextBlock LineHeight="34" FontWeight="Medium" FontSize="24" Margin="164,24,117,16" 
+                                   Text="Ingin aplikasi absensi yang mudah dan cepat? Square Checks solusi untuk Anda dengan fitur One-Click absen dan reminder ketika presensi kelas sudah dibuka serta dilengkapi dengan rekap absensi yang dapat diekspor ke PDF." Height="180" TextWrapping="Wrap" Foreground="White"/>
+                    </StackPanel>
+                    <Canvas Height="2038">
+                        <Image Source="illus.png" Canvas.Top="-200" Canvas.Right="-50" RenderTransformOrigin="0.5,0.5">
+                            <Image.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-15"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Image.RenderTransform>
+                        </Image>
+                        <StackPanel Canvas.Right="248" Canvas.Top="93">
+                            <TextBlock FontFamily="Montserrat" FontSize="34" FontWeight="SemiBold" Foreground="#FF444444" Text="Developer Team"/>
+                            <Rectangle Width="62" Height="7" Fill="#0288D1" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                        <StackPanel Canvas.Right="517" Canvas.Top="233">
+                            <Image Source="/Login/Anggota/Agustin.jpg" Width="100" Height="100">
+                                <Image.Clip>
+                                    <EllipseGeometry RadiusX="50" RadiusY="50" Center="50,50"/>
+                                </Image.Clip>
+                            </Image>
+                            <TextBlock Text="Agustin" FontFamily="Montserrat" FontSize="21" Width="Auto" Margin="14" TextAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Canvas.Right="341" Canvas.Top="233">
+                            <Image Source="/Login/Anggota/Fadhli.jpg" Width="100" Height="100">
+                                <Image.Clip>
+                                    <EllipseGeometry RadiusX="50" RadiusY="50" Center="50,50"/>
+                                </Image.Clip>
+                            </Image>
+                            <TextBlock Text="Fadhli" FontFamily="Montserrat" FontSize="21" Width="Auto" Margin="14" TextAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Canvas.Right="165" Canvas.Top="233">
+                            <Image Source="/Login/Anggota/RizaNafis.jpg" Width="100" Height="100">
+                                <Image.Clip>
+                                    <EllipseGeometry RadiusX="50" RadiusY="50" Center="50,50"/>
+                                </Image.Clip>
+                            </Image>
+                            <TextBlock Text="Nafis" FontFamily="Montserrat" FontSize="21" Width="Auto" Margin="14" TextAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Canvas.Right="428" Canvas.Top="405">
+                            <Image Source="/Login/Anggota/Fahreza.jpg" Width="100" Height="100">
+                                <Image.Clip>
+                                    <EllipseGeometry RadiusX="50" RadiusY="50" Center="50,50"/>
+                                </Image.Clip>
+                            </Image>
+                            <TextBlock Text="Fahreza" FontFamily="Montserrat" FontSize="21" Width="Auto" Margin="14" TextAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Canvas.Right="248" Canvas.Top="405">
+                            <Image Source="/Login/Anggota/RizaBachtiar.jpg" Width="100" Height="100">
+                                <Image.Clip>
+                                    <EllipseGeometry RadiusX="50" RadiusY="50" Center="50,50"/>
+                                </Image.Clip>
+                            </Image>
+                            <TextBlock Text="Rizbach" FontFamily="Montserrat" FontSize="21" Width="Auto" Margin="14" TextAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Canvas.Right="194" Canvas.Top="690">
+                            <TextBlock Text="Supervisors &amp; Mentors" FontFamily="Montserrat" FontSize="34" FontWeight="SemiBold" Foreground="#FF444444"/>
+                            <Rectangle Width="62" Height="7" Fill="#0288D1" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                        <FlowDocumentScrollViewer Canvas.Right="130" Canvas.Top="839">
+                            <FlowDocument>
+                                <Table>
+                                    <Table.Columns>
+                                        <TableColumn />
+                                        <TableColumn />
+                                    </Table.Columns>
+                                    <TableRowGroup>
+                                        <TableRow>
+                                            <TableCell>
+                                                <List>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Umi Sa'adah
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Desy Intan Permatasari
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Andhik Ampuh Yunanto
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Maulidan Bagus Afridan Rasyid
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Willy Achmat Fauzi
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Verent Flourencia Irene
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Mayshella Ainun Wakhidah
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Andhika Ahmad Ramadhan
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Fandi Ahmad
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                </List>
+                                            </TableCell>
+                                            <TableCell>
+                                                <List>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Ardian Kristya Pratama
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Angga Pradipta Kurnia Putra
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Muhammad Alif Pradipta ADP
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Rafly Arief Kanza
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Ahmad Jarir At Thobari
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Ajie Dibyo Respati
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Achmad Zulkarnain
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Arie Affianto
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                    <ListItem Margin="0,0,0,20">
+                                                        <Paragraph FontFamily="Montserrat" FontSize="16">
+                                                            Tegar Imansyah
+                                                        </Paragraph>
+                                                    </ListItem>
+                                                </List>
+                                            </TableCell>
+                                        </TableRow>
+                                    </TableRowGroup>
+                                </Table>
+
+                            </FlowDocument>
+                        </FlowDocumentScrollViewer>
+                        <StackPanel Canvas.Right="271" Canvas.Top="1400">
+                            <TextBlock Text="Sponsored by" FontFamily="Montserrat" FontSize="34" FontWeight="SemiBold" Foreground="#FF444444"/>
+                            <Rectangle Width="62" Height="7" Fill="#0288D1" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Canvas.Right="140" Canvas.Top="1500">
+                            <Image Source="/Login/Sponsorship/VirtualHive.png" Width="100" Height="100" Margin="15" />
+                            <Image Source="/Login/Sponsorship/Rasyid.png" Width="100" Height="100" Margin="15" />
+                            <Image Source="/Login/Sponsorship/PTI.png" Width="100" Height="100" Margin="15" />
+                            <Image Source="/Login/Sponsorship/MaulidanGames.png" Width="100" Height="100" Margin="15" />
+                        </StackPanel>
+                        <StackPanel Canvas.Right="271" Canvas.Top="1700">
+                            <TextBlock Text="Supported by" FontFamily="Montserrat" FontSize="34" FontWeight="SemiBold" Foreground="#FF444444"/>
+                            <Rectangle Width="62" Height="7" Fill="#0288D1" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Canvas.Right="70" Canvas.Top="1800">
+                            <Image Source="/Login/Sponsorship/Sindika.png" Width="100" Height="100" Margin="15" />
+                            <Image Source="/Login/Sponsorship/TrustMedis.png" Width="100" Height="100" Margin="15" />
+                            <Image Source="/Login/Sponsorship/RasyidInstitute.png" Width="100" Height="100" Margin="15" />
+                            <Image Source="/Login/Sponsorship/Profilku.png" Width="100" Height="100" Margin="15" />
+                            <Image Source="/Login/Sponsorship/Alterra.png" Width="100" Height="100" Margin="15" />
+                        </StackPanel>
+                    </Canvas>
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
-        <Image Source="illus.png" Grid.Column="1" Margin="662,402,-44,-154" RenderTransformOrigin="0.5,0.5">
-            <Image.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-15"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Image.RenderTransform>
-        </Image>
     </Grid>
 
 </basic:MyPage>

@@ -279,7 +279,21 @@
     <Resource Include="Dashboard\Banner.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Login\Anggota\Agustin.jpg" />
+    <Resource Include="Login\Anggota\Fadhli.jpg" />
+    <Resource Include="Login\Anggota\Fahreza.jpg" />
+    <Resource Include="Login\Anggota\RizaBachtiar.jpg" />
+    <Resource Include="Login\Anggota\RizaNafis.jpg" />
     <Content Include="Login\ChecksLogo.svg" />
+    <Resource Include="Login\Sponsorship\Alterra.png" />
+    <Resource Include="Login\Sponsorship\MaulidanGames.png" />
+    <Resource Include="Login\Sponsorship\Profilku.png" />
+    <Resource Include="Login\Sponsorship\PTI.png" />
+    <Resource Include="Login\Sponsorship\Rasyid.png" />
+    <Resource Include="Login\Sponsorship\RasyidInstitute.png" />
+    <Resource Include="Login\Sponsorship\Sindika.png" />
+    <Resource Include="Login\Sponsorship\TrustMedis.png" />
+    <Resource Include="Login\Sponsorship\Virtualhive.png" />
     <Resource Include="Login\Logo.png" />
     <Resource Include="Login\TypeLogo.png" />
     <Resource Include="Login\illus.png" />
