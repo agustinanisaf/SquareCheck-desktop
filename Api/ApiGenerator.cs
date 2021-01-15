@@ -12,7 +12,7 @@ namespace SquareCheck_desktop.Api
 
         private static ApiClient GetApiClient()
         {
-            return new ApiClient("http://api.square-check.me");
+            return new ApiClient("https://api.square-check.me");
         }
 
         private static async Task SetupGetRequest(string _endpoint, Action<HttpResponseBundle> successAction)
